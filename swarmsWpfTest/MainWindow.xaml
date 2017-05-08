@@ -1,0 +1,138 @@
+﻿<Window x:Class="swarmsWpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:local="clr-namespace:swarmsWpfTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2466*"/>
+            <ColumnDefinition Width="735*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\sunnyi\Documents\Visual Studio 2017\Projects\Mai\Swarms\temp1\swarmsWpfTest\swarmsWpfTest\dump\bg.jpg"/>
+        </Grid.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="181*"/>
+                <RowDefinition Height="179*"/>
+            </Grid.RowDefinitions>
+            <!--
+            <m:Map CredentialsProvider="AjovCpCWlDAOhIUDzC9Z1P5tzsVH7O6y_W7F88ILhx5Hmi0enbB7wqHhPoN0hX7P"
+                Center="63.4340356,10.413626000000022" ZoomLevel="17" Grid.Row="1"/>
+            -->
+            <!--
+            <Image Stretch="UniformToFill" Margin="0" Grid.Row="1" Source="https://maps.googleapis.com/maps/api/staticmap?center=Trondheim&amp;size=640x400&amp;style=element:labels|visibility:off&amp;style=element:geometry.stroke|visibility:off&amp;style=feature:landscape|element:geometry|saturation:-100&amp;style=feature:water|saturation:-100|invert_lightness:true&amp;key=AIzaSyAjxxE08yWi9ljXnpjfLS7pxR-RwdRVNKw" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            -->
+            <Image Stretch="UniformToFill" Margin="0" Grid.Row="1" Source="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAjxxE08yWi9ljXnpjfLS7pxR-RwdRVNKw&amp;center=63.433542800000005,10.4135718&amp;zoom=13&amp;format=png&amp;maptype=roadmap&amp;style=element:geometry%7Ccolor:0x262632&amp;style=element:labels.text.fill%7Ccolor:0x746855&amp;style=element:labels.text.stroke%7Ccolor:0x242f3e&amp;style=feature:administrative%7Celement:geometry%7Cvisibility:off&amp;style=feature:administrative.land_parcel%7Cvisibility:off&amp;style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:administrative.neighborhood%7Cvisibility:off&amp;style=feature:poi%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&amp;style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&amp;style=feature:road%7Celement:geometry%7Ccolor:0x38414e%7Cvisibility:off&amp;style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&amp;style=feature:road%7Celement:labels%7Cvisibility:off&amp;style=feature:road%7Celement:labels.icon%7Cvisibility:off&amp;style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&amp;style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&amp;style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&amp;style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&amp;style=feature:transit%7Cvisibility:off&amp;style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&amp;style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:water%7Celement:geometry%7Ccolor:0x3a3c4b&amp;style=feature:water%7Celement:labels.text%7Cvisibility:off&amp;style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&amp;style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&amp;size=2463x882" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Grid  Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <MediaElement Stretch="UniformToFill" Source="C:\Users\sunnyi\Documents\Visual Studio 2017\Projects\Mai\Swarms\temp1\swarmsWpfTest\swarmsWpfTest\dummyVideo.mp4" Margin="0" Volume="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <MediaElement  Stretch="UniformToFill" Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg" Grid.Column="1" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Grid Margin="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="841*"/>
+                        <RowDefinition Height="60*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Fill="#302F3e" Opacity="0.75" Margin="0" Grid.Row="1"/>
+                    <Grid Margin="0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="39*"/>
+                            <ColumnDefinition Width="13*"/>
+                            <ColumnDefinition Width="594*"/>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="45*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Camera 1:  angle 90°  / position 63.5678°N 10.400123° E / lights - on / condition - ok" Foreground="#FFFFFF" VerticalAlignment="Center" Grid.Column="2" Style="{StaticResource CustomFont}" HorizontalContentAlignment="Stretch" Height="26" Margin="0,5"/>
+                        <Image Margin="0,7,0,9" Source="image/video_play_icon.png" HorizontalAlignment="Right"/>
+                        <!--Marginer må fikses-->
+                        <Image Margin="0,7" Source="image/light_icon.png" Grid.Column="3"/>
+                        <Image Margin="0,7,0,9" Source="image/camera_icon.png" Grid.Column="4"/>
+                    </Grid>
+                </Grid>
+                <Grid Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="841*"/>
+                        <RowDefinition Height="60*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Fill="#302F3e" Opacity="0.75" Margin="0" Grid.Row="1"/>
+                    <Grid Margin="0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="39*"/>
+                            <ColumnDefinition Width="13*"/>
+                            <ColumnDefinition Width="594*"/>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="45*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Camera 1:  angle 90°  / position 63.5678°N 10.400123° E / lights - on / condition - ok" Foreground="#FFFFFF" VerticalAlignment="Center" Grid.Column="2" Style="{StaticResource CustomFont}" HorizontalContentAlignment="Stretch" Height="26" Margin="0,5"/>
+                        <Image Margin="0,7,0,9" Source="image/video_play_icon.png" HorizontalAlignment="Right"/>
+                        <!--Marginer må fikses-->
+                        <Image Margin="0,7" Source="image/light_icon.png" Grid.Column="3"/>
+                        <Image Margin="0,7,0,9" Source="image/camera_icon.png" Grid.Column="4"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="1550*"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label x:Name="_labelClock" Content="10:15" Grid.Column="1" HorizontalAlignment="Right" Height="19" Margin="0,15,37,0" VerticalAlignment="Top" Width="30" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" FontSize="7"/>
+                <Grid Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="31*"/>
+                        <ColumnDefinition Width="337*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Project:" Grid.Column="1" Height="9" Margin="0,16,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7"/>
+                    <Label Content="Rosebud" Grid.Column="1" Height="15" Margin="0,25,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
+                </Grid>
+
+                <Grid Margin="0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="31*"/>
+                        <ColumnDefinition Width="337*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="ROV name:" Grid.Column="1" Height="9" Margin="0,2,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7"/>
+                    <Label Content="Orson" Grid.Column="1" Height="15" Margin="0,11,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
+                </Grid>
+                <Label Content="Start time" Grid.Column="2" Height="9" Margin="0,16,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7"/>
+                <Label Content="11:59" Grid.Column="1" Height="15" Margin="0,25,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
+
+                <Label Content="Task:" Grid.Column="1" Height="9" Margin="0,2,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7" Grid.Row="1"/>
+                <Label Content="World peace" Grid.Column="1" Height="15" Margin="0,11,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" Grid.Row="1"/>
+            </Grid>
+            <Image HorizontalAlignment="Right" Height="18" Margin="0,16,16,0" VerticalAlignment="Top" Width="18" Source="image/clock_icon.png"/>
+            <Grid Margin="0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="click" Content="Button" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.5" Padding="0" Click="rovClick"/>
+                <Button Content="Button" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.5" Grid.Column="1" Padding="0" Click="gripperClick"/>
+                <Label Content="ROV control" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14" Padding="0"/>
+                <Label Content="Gripper control" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Grid.Column="1" FontSize="14" Padding="0"/>
+            </Grid>
+            <Frame x:Name="rightFrame" Margin="0" Grid.Row="2" NavigationUIVisibility="Hidden" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
+            <!--<Rectangle Fill="#302F3e" Margin="0"/>
+            -->
+        </Grid>
+
+    </Grid>
+</Window>
