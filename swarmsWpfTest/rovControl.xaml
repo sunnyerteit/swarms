@@ -42,7 +42,7 @@
                         <RowDefinition Height="5*"/>
                         <RowDefinition Height="68*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Label:" Margin="0,0,0,10" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Padding="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Bottom" />
+                    <Label Content="Position:" Margin="0,0,0,10" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Padding="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Bottom" />
                     <Rectangle Fill="#302F3E" Margin="0" Grid.Row="1"/>
                     <Image HorizontalAlignment="Left" Height="25" Margin="12,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="25" Source="image/location_icon.png"/>
                     <Grid Margin="66,0,0,0" Grid.Row="1">
@@ -68,11 +68,18 @@
                         <Label Content="Home" Margin="0" HorizontalContentAlignment="Stretch" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Foreground="White" VerticalAlignment="Top" Grid.Row="1" VerticalContentAlignment="Stretch" Grid.Column="4" Padding="0"/>
                     </Grid>
                     <Rectangle Fill="#302F3E" Margin="0" Grid.Row="3"/>
-                    <Label Content="Position:" Margin="12,12,0,0" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Padding="0" Grid.Row="3"/>
+                    <Rectangle Fill="#302F3E" Margin="0" Grid.Row="5"/>
+                    <Rectangle Fill="#302F3E" Margin="0" Grid.Row="7"/>
+                    <Label Content="Direction:" Margin="12,12,0,0" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Padding="0" Grid.Row="3"/>
                     <Label Content="Pitch and roll:" Margin="120,12,0,0" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Padding="0" Grid.Row="3"/>
+                    <Label Content="Alarms" Margin="0,0,0,10" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Padding="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Bottom" Grid.Row="8" />
+                    <Label Content="Status self check" Margin="12,0,0,0" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Padding="0" Grid.Row="5" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                    <Label Content="Dynamic positioning" Margin="12,9,0,9" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Foreground="White" Padding="0" Grid.Row="7" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                    <Rectangle Fill="#302F3E" Margin="0" Grid.Row="13"/>
+                    <Label Content="Frame goes here" Margin="12,9,0,9" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Foreground="White" Padding="0" Grid.Row="13" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                    <RadioButton Content="" HorizontalAlignment="Left" Margin="150,0,0,0" Grid.Row="7" VerticalContentAlignment="Center"/>
                 </Grid>
             </Grid>
-
         </Grid>
         <!--<Image Margin="0" Source="C:\Users\sunnyi\Documents\Visual Studio 2017\Projects\Mai\Swarms\temp1\swarmsWpfTest\swarmsWpfTest\dump\bg2.jpg" Height="1800" Width="3200" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>-->
     </Grid>
