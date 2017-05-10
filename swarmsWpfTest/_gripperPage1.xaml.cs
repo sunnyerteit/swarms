@@ -68,28 +68,28 @@ namespace swarmsWpfTest
                 Transform3DGroup F3 = new Transform3DGroup();
                 Transform3DGroup F4 = new Transform3DGroup();
 
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 0), new Point3D(0, 0, 0));
+                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 90), new Point3D(0, 0, 0));
                 F1.Children.Add(R);
 
                 T = new TranslateTransform3D(0, 100, 0);
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 0, 0), 0), new Point3D(0, 100, 0));
-                F2.Children.Add(F1);
+                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 0, 0), 45), new Point3D(0, 100, 0));
                 F2.Children.Add(T);
                 F2.Children.Add(R);
+                F2.Children.Add(F1);
 
 
                 T = new TranslateTransform3D(0, 550, 0);
                 R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), 0), new Point3D(0, 550, 0));
-                F3.Children.Add(F2);
                 F3.Children.Add(T);
                 F3.Children.Add(R);
+                F3.Children.Add(F2);
 
 
                 T = new TranslateTransform3D(0, 450, 0);
                 R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 0), new Point3D(0, 450, 0));
-                F4.Children.Add(F3);
                 F4.Children.Add(T);
                 F4.Children.Add(R);
+                F4.Children.Add(F3);
 
                 link1.Transform = F1;
                 link2.Transform = F2;
