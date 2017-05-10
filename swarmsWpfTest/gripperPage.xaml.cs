@@ -25,6 +25,7 @@ namespace swarmsWpfTest
             InitializeComponent();
             _gripperFrame1.Content = new _gripperPage1();
             _gripperFrame2.Content = new _gripperPage2();
+            _gripperFrame3.Content = new _gripperPage3();
         }
     }
 }

@@ -38,5 +38,14 @@
             <Rectangle Fill="#FF292834" Height="156" Margin="10,0" Width="30" Grid.Column="1" VerticalAlignment="Top"/>
             <Frame x:Name="_gripperFrame2" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="#FF292834" Height="156" Margin="10,0" Width="30" Grid.Column="1" VerticalAlignment="Top"/>
+            <Frame x:Name="_gripperFrame3" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        </Grid>
     </Grid>
 </Page>
