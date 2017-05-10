@@ -131,6 +131,10 @@
     </EmbeddedResource>
     <Resource Include="fonts\Roboto.ttf" />
     <Resource Include="fonts\Roboto-Light.ttf" />
+    <None Include="models\_arm1.STL" />
+    <None Include="models\_arm2.STL" />
+    <None Include="models\_base.STL" />
+    <None Include="models\_claw.STL" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
