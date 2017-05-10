@@ -47,7 +47,7 @@ namespace swarmsWpfTest
             RoboticArm.Content = Initialize_Environment(MODEL_PATH1, MODEL_PATH2, MODEL_PATH3, MODEL_PATH4);
             // Add to view port
             viewPort3d.Children.Add(RoboticArm);
-            viewPort3d.Camera.LookDirection = new Vector3D(0, 0, 47.218);
+            viewPort3d.Camera.LookDirection = new Vector3D(47, 0, 0);
             viewPort3d.Camera.UpDirection = new Vector3D(0, 1, 0);
             viewPort3d.Camera.NearPlaneDistance = -1400;
         }
@@ -58,49 +58,18 @@ namespace swarmsWpfTest
             {
                 viewPort3d.RotateGesture = new MouseGesture(MouseAction.LeftClick);
                 ModelImporter import = new ModelImporter();
-                link1 = import.Load(model1);
-                link2 = import.Load(model2);
-                link3 = import.Load(model3);
-                link4 = import.Load(model4);
+                link1 = import.Load(model4);
 
                 Transform3DGroup F1 = new Transform3DGroup();
-                Transform3DGroup F2 = new Transform3DGroup();
-                Transform3DGroup F3 = new Transform3DGroup();
-                Transform3DGroup F4 = new Transform3DGroup();
 
                 R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 90), new Point3D(0, 0, 0));
                 F1.Children.Add(R);
 
-                T = new TranslateTransform3D(0, 100, 0);
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 0, 0), 45), new Point3D(0, 100, 0));
-                F2.Children.Add(T);
-                F2.Children.Add(R);
-                F2.Children.Add(F1);
-
-
-                T = new TranslateTransform3D(0, 550, 0);
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), 0), new Point3D(0, 550, 0));
-                F3.Children.Add(T);
-                F3.Children.Add(R);
-                F3.Children.Add(F2);
-
-
-                T = new TranslateTransform3D(0, 450, 0);
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 0), new Point3D(0, 450, 0));
-                F4.Children.Add(T);
-                F4.Children.Add(R);
-                F4.Children.Add(F3);
 
                 link1.Transform = F1;
-                link2.Transform = F2;
-                link3.Transform = F3;
-                link4.Transform = F4;
 
 
                 RA.Children.Add(link1);
-                RA.Children.Add(link2);
-                RA.Children.Add(link3);
-                RA.Children.Add(link4);
             }
             catch (Exception e)
             {

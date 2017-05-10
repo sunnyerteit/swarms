@@ -21,12 +21,13 @@
         <Rectangle Fill="#302F3E" Margin="0" Grid.Row="1"/>
         <Rectangle Fill="#302F3E" Margin="0" Grid.Row="3"/>
         <Rectangle Fill="#302F3E" Margin="0" Grid.Row="5"/>
+        <Label Content="Gripper positioning:" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="64*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Fill="#FF292834" Height="156" Margin="10,0" Width="30" Grid.Column="1" VerticalAlignment="Top"/>
+            <Rectangle Fill="#FF292834" Margin="0,20" Width="14" Grid.Column="1" HorizontalAlignment="Left"/>
             <Frame x:Name="_gripperFrame1" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Grid>
 
@@ -35,7 +36,7 @@
                 <ColumnDefinition Width="64*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Fill="#FF292834" Height="156" Margin="10,0" Width="30" Grid.Column="1" VerticalAlignment="Top"/>
+            <Rectangle Fill="#FF292834" Margin="0,20" Width="14" Grid.Column="1" HorizontalAlignment="Left"/>
             <Frame x:Name="_gripperFrame2" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Grid>
 
@@ -44,7 +45,7 @@
                 <ColumnDefinition Width="64*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Fill="#FF292834" Height="156" Margin="10,0" Width="30" Grid.Column="1" VerticalAlignment="Top"/>
+            <Rectangle Fill="#FF292834" Grid.Column="1" Width="14" HorizontalAlignment="Left" Margin="0,20"/>
             <Frame x:Name="_gripperFrame3" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Grid>
     </Grid>
