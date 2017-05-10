@@ -142,6 +142,7 @@
                         <RowDefinition Height="1373*"/>
                     </Grid.RowDefinitions>
                     <Frame x:Name="rightTopFrame" Content="Frame" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden"/>
+                    <Frame x:Name="rightBotFrame" Margin="0" Content="Frame" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" Grid.Row="1"/>
                 </Grid>
 
             </Grid>

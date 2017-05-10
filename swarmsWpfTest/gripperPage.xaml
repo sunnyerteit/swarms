@@ -1,0 +1,34 @@
+﻿<Page x:Class="swarmsWpfTest.gripperPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:swarmsWpfTest"
+      mc:Ignorable="d"
+      d:DesignHeight="686.5" d:DesignWidth="337.5"
+      Title="gripperPage" Height="Auto" Width="Auto">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="361*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="635*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="219*"/>
+            <RowDefinition Height="74*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#302F3E" Margin="0" Grid.Row="1"/>
+        <Rectangle Fill="#302F3E" Margin="0" Grid.Row="3"/>
+        <Rectangle Fill="#302F3E" Margin="0" Grid.Row="5"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="#FF292834" Height="156" Margin="10,0" Width="30" Grid.Column="1" VerticalAlignment="Top"/>
+            <Frame x:Name="_gripperFrame1" Content="Frame" Margin="0" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        </Grid>
+
+    </Grid>
+</Page>

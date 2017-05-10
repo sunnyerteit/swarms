@@ -25,6 +25,7 @@ namespace swarmsWpfTest
             InitializeComponent();
             displayTime();
             rightTopFrame.Content = new positionPage();
+            rightBotFrame.Content = new gripperPage();
             //rightFrame.Content = new rovControl();
         }
 

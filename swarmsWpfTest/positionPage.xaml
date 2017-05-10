@@ -14,7 +14,7 @@
             <RowDefinition Height="112*"/>
         </Grid.RowDefinitions>
         <Label Content="Position:" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto"/>
-        <Rectangle Fill="#FF302F3E" Margin="0" Grid.Row="1" />
+        <Rectangle Fill="#302f3e" Margin="0" Grid.Row="1" />
 
                     <Image HorizontalAlignment="Left" Height="25" Margin="12,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="25" Source="image/location_icon.png"/>
                     <Grid Margin="66,0,0,0" Grid.Row="1">
