@@ -75,6 +75,9 @@
     <Compile Include="rovControl.xaml.cs">
       <DependentUpon>rovControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="rovPage.xaml.cs">
+      <DependentUpon>rovPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_gripperPage3.xaml.cs">
       <DependentUpon>_gripperPage3.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="rovControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="rovPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

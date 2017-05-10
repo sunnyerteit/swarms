@@ -35,14 +35,15 @@ namespace swarmsWpfTest
             _labelClock.Content = DateTime.Now.ToShortTimeString();
         }
 
-        //private void rovClick(object sender, RoutedEventArgs e)
-        //{
-        //    rightFrame.Content = new rovControl();
-        //}
+        private void rovClick(object sender, RoutedEventArgs e)
+        {
+            rightBotFrame.Content = new rovPage();
+        }
 
-        //private void gripperClick(object sender, RoutedEventArgs e)
-        //{
-        //    rightFrame.Content = new gripperControl();
-        //}
+        private void gripperClick(object sender, RoutedEventArgs e)
+        {
+            rightBotFrame.Content = new gripperPage();
+        }
+
     }
 }

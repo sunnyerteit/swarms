@@ -124,8 +124,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="click" Content="Button" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.5" Padding="0"/>
-                <Button Content="Button" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.5" Grid.Column="1" Padding="0"/>
+                <Button x:Name="click" Content="Button" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.5" Padding="0" Click="rovClick"/>
+                <Button Content="Button" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.5" Grid.Column="1" Padding="0" Click="gripperClick"/>
                 <Label Content="ROV control" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14" Padding="0"/>
                 <Label Content="Gripper control" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Grid.Column="1" FontSize="14" Padding="0"/>
             </Grid>
