@@ -63,17 +63,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="gripperControl.xaml.cs">
-      <DependentUpon>gripperControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="gripperPage.xaml.cs">
       <DependentUpon>gripperPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="positionPage.xaml.cs">
       <DependentUpon>positionPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="rovControl.xaml.cs">
-      <DependentUpon>rovControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="rovPage.xaml.cs">
       <DependentUpon>rovPage.xaml</DependentUpon>
@@ -87,10 +81,6 @@
     <Compile Include="_gripperPage1.xaml.cs">
       <DependentUpon>_gripperPage1.xaml</DependentUpon>
     </Compile>
-    <Page Include="gripperControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="gripperPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,10 +98,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="positionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="rovControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
