@@ -24,9 +24,6 @@ namespace swarmsWpfTest
     {
         Model3DGroup RA = new Model3DGroup();
         Model3D link1 = null;
-        Model3D link2 = null;
-        Model3D link3 = null;
-        Model3D link4 = null;
         ModelVisual3D RoboticArm = new ModelVisual3D();
 
         //private const string MODEL_PATH1 = "C:\Users\sunnyi\Documents\Visual Studio 2017\Projects\Mai\Swarms\temp1\swarmsWpfTest\swarmsWpfTest\models\_base.STL";
@@ -40,11 +37,11 @@ namespace swarmsWpfTest
         TranslateTransform3D T = new TranslateTransform3D();
 
 
-        public _gripperPage3()
+        public _gripperPage3(double deg1, double deg2, double deg3)
         {
             InitializeComponent();
             ModelVisual3D device3D = new ModelVisual3D();
-            RoboticArm.Content = Initialize_Environment(MODEL_PATH1, MODEL_PATH2, MODEL_PATH3, MODEL_PATH4);
+            RoboticArm.Content = Initialize_Environment(MODEL_PATH1, MODEL_PATH2, MODEL_PATH3, MODEL_PATH4, deg1, deg2, deg3);
             // Add to view port
             viewPort3d.Children.Add(RoboticArm);
             viewPort3d.Camera.LookDirection = new Vector3D(47, 0, 0);
@@ -52,7 +49,7 @@ namespace swarmsWpfTest
             viewPort3d.Camera.NearPlaneDistance = -1400;
         }
 
-        private Model3DGroup Initialize_Environment(string model1, string model2, string model3, string model4)
+        private Model3DGroup Initialize_Environment(string model1, string model2, string model3, string model4, double deg1, double deg2, double deg3)
         {
             try
             {
@@ -62,7 +59,7 @@ namespace swarmsWpfTest
 
                 Transform3DGroup F1 = new Transform3DGroup();
 
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 90), new Point3D(0, 0, 0));
+                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 0), new Point3D(0, 0, 0));
                 F1.Children.Add(R);
 
 

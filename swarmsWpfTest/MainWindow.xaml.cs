@@ -25,7 +25,7 @@ namespace swarmsWpfTest
             InitializeComponent();
             displayTime();
             rightTopFrame.Content = new positionPage();
-            rightBotFrame.Content = new gripperPage();
+            rightBotFrame.Content = new gripperPage(0,0,0);
             //rightFrame.Content = new rovControl();
         }
 
@@ -42,7 +42,7 @@ namespace swarmsWpfTest
 
         private void gripperClick(object sender, RoutedEventArgs e)
         {
-            rightBotFrame.Content = new gripperPage();
+            rightBotFrame.Content = new gripperPage(30, 45, 20);
         }
 
     }

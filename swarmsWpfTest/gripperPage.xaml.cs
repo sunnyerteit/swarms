@@ -20,12 +20,12 @@ namespace swarmsWpfTest
     /// </summary>
     public partial class gripperPage : Page
     {
-        public gripperPage()
+        public gripperPage(double deg1, double deg2, double deg3)
         {
             InitializeComponent();
-            _gripperFrame1.Content = new _gripperPage1();
-            _gripperFrame2.Content = new _gripperPage2();
-            _gripperFrame3.Content = new _gripperPage3();
+            _gripperFrame1.Content = new _gripperPage1(deg1, deg2, deg3);
+            _gripperFrame2.Content = new _gripperPage2(deg1, deg2, deg3);
+            _gripperFrame3.Content = new _gripperPage3(deg1, deg2, deg3);
         }
     }
 }

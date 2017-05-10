@@ -40,11 +40,11 @@ namespace swarmsWpfTest
         TranslateTransform3D T = new TranslateTransform3D();
 
 
-        public _gripperPage1()
+        public _gripperPage1(double deg1, double deg2, double deg3)
         {
             InitializeComponent();
             ModelVisual3D device3D = new ModelVisual3D();
-            RoboticArm.Content = Initialize_Environment(MODEL_PATH1, MODEL_PATH2, MODEL_PATH3, MODEL_PATH4);
+            RoboticArm.Content = Initialize_Environment(MODEL_PATH1, MODEL_PATH2, MODEL_PATH3, MODEL_PATH4, deg1, deg2, deg3);
             // Add to view port
             viewPort3d.Children.Add(RoboticArm);
             viewPort3d.Camera.LookDirection = new Vector3D(0, 0, 47.218);
@@ -52,7 +52,7 @@ namespace swarmsWpfTest
             viewPort3d.Camera.NearPlaneDistance = -1400;
         }
 
-        private Model3DGroup Initialize_Environment(string model1, string model2, string model3, string model4)
+        private Model3DGroup Initialize_Environment(string model1, string model2, string model3, string model4, double deg1, double deg2, double deg3)
         {
             try
             {
@@ -68,18 +68,18 @@ namespace swarmsWpfTest
                 Transform3DGroup F3 = new Transform3DGroup();
                 Transform3DGroup F4 = new Transform3DGroup();
 
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 90), new Point3D(0, 0, 0));
+                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), deg1), new Point3D(0, 0, 0));
                 F1.Children.Add(R);
 
                 T = new TranslateTransform3D(0, 100, 0);
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 0, 0), 45), new Point3D(0, 100, 0));
+                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 0, 0), deg2), new Point3D(0, 100, 0));
                 F2.Children.Add(T);
                 F2.Children.Add(R);
                 F2.Children.Add(F1);
 
 
                 T = new TranslateTransform3D(0, 550, 0);
-                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), 0), new Point3D(0, 550, 0));
+                R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), deg3), new Point3D(0, 550, 0));
                 F3.Children.Add(T);
                 F3.Children.Add(R);
                 F3.Children.Add(F2);
