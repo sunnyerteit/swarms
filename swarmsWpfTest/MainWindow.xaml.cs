@@ -41,14 +41,14 @@ namespace swarmsWpfTest
         double _armDeg3 = 54.9;
 
 
-        double _direction = 270.6;
+        public static double _direction = 270.6;
         double _pitch = 3.4;
         double _roll = -1.2;
 
         bool _selfCheck = true;
-        bool _dynPos = false;
-        bool _drive = true;
-        bool _follow = false;
+        static bool _dynPos = false;
+        static bool _drive = true;
+        static bool _follow = false;
 
 
         public MainWindow()
@@ -90,6 +90,27 @@ namespace swarmsWpfTest
         {
             rightBotFrame.Content = new gripperPage(_armDeg1,_armDeg2,_armDeg3);
         }
+
+
+        public static void updateDynPos()
+        {
+            _dynPos = rovPage.dynPos;
+            _drive = rovPage.drive;
+            _follow = rovPage.follow;
+        }
+
+
+        //public static void updatePos(_dynPos, )
+        //{
+        //    rovPage.dynPos(_dynPos);
+        //}
+
+        //public void mainGetPositionMethod()
+        //{
+        //    _dynPos = rovPage.
+
+        //}
+        
 
     }
 }

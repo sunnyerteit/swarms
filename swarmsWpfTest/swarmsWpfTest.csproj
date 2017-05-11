@@ -165,5 +165,9 @@
   <ItemGroup>
     <Resource Include="image\location_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\_dynamicCompass.png" />
+    <Resource Include="image\_staticCompass.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
