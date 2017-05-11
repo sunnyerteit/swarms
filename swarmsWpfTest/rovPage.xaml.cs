@@ -20,9 +20,21 @@ namespace swarmsWpfTest
     /// </summary>
     public partial class rovPage : Page
     {
-        public rovPage()
+        public rovPage(bool _dynPos, bool _drive, bool _follow)
         {
             InitializeComponent();
+            if (_dynPos == true)
+            {
+                _rDynPos.IsChecked = true;
+            }
+            else if (_drive == true)
+            {
+                _rDrive.IsChecked = true;
+            }
+            else if (_follow == true)
+            {
+                _rFollow.IsChecked = true;
+            }
         }
     }
 }

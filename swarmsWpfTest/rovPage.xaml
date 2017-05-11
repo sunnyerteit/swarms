@@ -32,9 +32,17 @@
         <Rectangle Fill="#FF302F3E" Margin="0" Grid.Row="13" />
 
         <Label Content="Status self check" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="3"/>
-        <Label Content="Dynamic positioning" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
         <Label Content="Alarms" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="6" Padding="0"/>
         <Label Content="Sensors" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="8" Padding="0"/>
         <Label Content="Turbidity information here" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="11"/>
+        <StackPanel Margin="0" Grid.Row="5" Orientation="Horizontal">
+            <Label Content="Dynamic positioning" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
+            <RadioButton x:Name="_rDynPos" VerticalContentAlignment="Center" Margin="0,0,20,0" />
+            <Label Content="Drive" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
+            <RadioButton x:Name="_rDrive" VerticalContentAlignment="Center" Margin="0,0,20,0" />
+            <Label Content="Follow" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
+            <RadioButton x:Name="_rFollow" VerticalContentAlignment="Center" />
+        </StackPanel>
+
     </Grid>
 </Page>

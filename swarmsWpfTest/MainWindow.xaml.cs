@@ -47,6 +47,7 @@ namespace swarmsWpfTest
 
         bool _selfCheck = true;
         bool _dynPos = false;
+        bool _drive = true;
         bool _follow = false;
 
 
@@ -54,7 +55,7 @@ namespace swarmsWpfTest
         {
             InitializeComponent();
             displayTime();
-            rightTopFrame.Content = new positionPage();
+            rightTopFrame.Content = new positionPage(_longitude, _latitude, _depth, _sog, _heading);
             rightBotFrame.Content = new gripperPage(_armDeg1,_armDeg2,_armDeg3);
             //rightFrame.Content = new rovControl();
 
@@ -82,7 +83,7 @@ namespace swarmsWpfTest
 
         private void rovClick(object sender, RoutedEventArgs e)
         {
-            rightBotFrame.Content = new rovPage();
+            rightBotFrame.Content = new rovPage(_dynPos, _drive, _follow);
         }
 
         private void gripperClick(object sender, RoutedEventArgs e)

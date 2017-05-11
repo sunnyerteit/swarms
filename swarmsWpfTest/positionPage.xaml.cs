@@ -20,9 +20,14 @@ namespace swarmsWpfTest
     /// </summary>
     public partial class positionPage : Page
     {
-        public positionPage()
+        public positionPage(double _longitude, double _latitude, double _depth, double _sog, string _heading)
         {
             InitializeComponent();
+            _lLongitude.Content = _longitude + " °N";
+            _lLatitude.Content = _latitude + " °E";
+            _lDepth.Content = _depth + " m";
+            _lSog.Content = _sog + " km";
+            _lHeading.Content = _heading;
         }
     }
 }
