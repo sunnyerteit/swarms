@@ -124,7 +124,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="click" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" Click="rovClick" BorderThickness="0">
+                <Button x:Name="_bRovButton" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" Click="rovClick" BorderThickness="0" Background="#3c384D">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -132,18 +132,18 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Image Source="image/_rovSymbol.png" Margin="10" />
-                        <Label Content="ROV Control" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Column="1" />
+                        <Label Content="ROV control" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Column="1" />
                     </Grid>
                 </Button>
-                <Button x:Name="click2" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" Click="gripperClick" BorderThickness="0" Grid.Column="1">
+                <Button x:Name="_bGripperButton" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" Click="gripperClick" BorderThickness="0" Grid.Column="1" Background="#FF3C3B4D">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="image/_rovSymbol.png" Margin="10" />
-                        <Label Content="ROV Control" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Column="1" />
+                        <Image Source="image/_gripperSymbol.png" Margin="10" />
+                        <Label Content="Gripper control" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Column="1" />
                     </Grid>
                 </Button>
             </Grid>

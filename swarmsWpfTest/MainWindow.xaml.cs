@@ -36,7 +36,7 @@ namespace swarmsWpfTest
         double _sog = 3.2;
         string _heading = "Home";
 
-        public static double _armDeg1 = 120.9;
+        public static double _armDeg1 = 20.9;
         public static double _armDeg2 = 24.9;
         public static double _armDeg3 = 54.9;
 
@@ -84,11 +84,17 @@ namespace swarmsWpfTest
         private void rovClick(object sender, RoutedEventArgs e)
         {
             rightBotFrame.Content = new rovPage(_dynPos, _drive, _follow);
+
+            //_bRovButton.Background = Brushes.#FF3C3B4D;
+            _bRovButton.Background = new SolidColorBrush(Color.FromArgb(255, 60, 59, 77));
+            _bGripperButton.Background = new SolidColorBrush(Color.FromArgb(255, 60, 56, 77));
         }
 
         private void gripperClick(object sender, RoutedEventArgs e)
         {
             rightBotFrame.Content = new gripperPage(_armDeg1,_armDeg2,_armDeg3);
+            _bGripperButton.Background = new SolidColorBrush(Color.FromArgb(255, 60, 59, 77));
+            _bRovButton.Background = new SolidColorBrush(Color.FromArgb(255, 60, 56, 77));
         }
 
 
