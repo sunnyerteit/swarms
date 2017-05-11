@@ -27,7 +27,17 @@
                 <ColumnDefinition Width="64*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Fill="#FF292834" Margin="0,20" Width="14" Grid.Column="1" HorizontalAlignment="Left"/>
+            <Rectangle Fill="#FF292834" Margin="0,20" Width="10" Grid.Column="1" HorizontalAlignment="Left"/>
+            <Rectangle x:Name="_rDeg1" Fill="#FF71D3E8" Margin="0,20" Width="10" Grid.Column="1" HorizontalAlignment="Left" RenderTransformOrigin="0.5,1">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
             <Frame x:Name="_gripperFrame1" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Grid>
 
@@ -36,7 +46,17 @@
                 <ColumnDefinition Width="64*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Fill="#FF292834" Margin="0,20" Width="14" Grid.Column="1" HorizontalAlignment="Left"/>
+            <Rectangle Fill="#FF292834" Margin="0,20" Width="10" Grid.Column="1" HorizontalAlignment="Left"/>
+            <Rectangle x:Name="_rDeg2" Fill="#FF71D3E8" Margin="0,20" Width="10" Grid.Column="1" HorizontalAlignment="Left" RenderTransformOrigin="0.5,1">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.4"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
             <Frame x:Name="_gripperFrame2" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Grid>
 
@@ -45,7 +65,17 @@
                 <ColumnDefinition Width="64*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Fill="#FF292834" Grid.Column="1" Width="14" HorizontalAlignment="Left" Margin="0,20"/>
+            <Rectangle Fill="#FF292834" Grid.Column="1" Width="10" HorizontalAlignment="Left" Margin="0,20"/>
+            <Rectangle x:Name="_rDeg3" Fill="#FF71D3E8" Grid.Column="1" Width="10" HorizontalAlignment="Left" Margin="0,20" RenderTransformOrigin="0.5,1">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.8"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
             <Frame x:Name="_gripperFrame3" Content="Frame" Margin="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Grid>
     </Grid>

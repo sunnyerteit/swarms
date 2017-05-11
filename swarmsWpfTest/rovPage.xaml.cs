@@ -77,10 +77,50 @@ namespace swarmsWpfTest
             follow = true;
             MainWindow.updateDynPos();
         }
+        
 
+        //Updates the compass in rovPage.xaml
         private void updateDegrees()
         {
             _lCompassDegrees.Content = MainWindow._direction.ToString("0.");
+            RotateTransform rotateTransform = new RotateTransform( - MainWindow._direction + 45);
+            _iDynamicCompass.RenderTransform = rotateTransform;
+            if (MainWindow._direction % 360 < 22.5)
+            {
+                _lADirection.Content = "NORTH";
+            }
+            else if (MainWindow._direction % 360 < 67.5)
+            {
+                _lADirection.Content = "NORTHEAST";
+            }
+            else if (MainWindow._direction % 360 < 112.5)
+            {
+                _lADirection.Content = "EAST";
+            }
+            else if (MainWindow._direction % 360 < 157.5)
+            {
+                _lADirection.Content = "SOUTHEAST";
+            }
+            else if (MainWindow._direction % 360 < 202.5)
+            {
+                _lADirection.Content = "SOUTH";
+            }
+            else if (MainWindow._direction % 360 < 247.5)
+            {
+                _lADirection.Content = "SOUTHWEST";
+            }
+            else if (MainWindow._direction % 360 < 292.5)
+            {
+                _lADirection.Content = "WEST";
+            }
+            else if (MainWindow._direction % 360 < 337.5)
+            {
+                _lADirection.Content = "NORTHWEST";
+            }
+            else
+            {
+                _lADirection.Content = "NORTH";
+            }
         }
 
 

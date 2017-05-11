@@ -36,12 +36,12 @@ namespace swarmsWpfTest
         double _sog = 3.2;
         string _heading = "Home";
 
-        double _armDeg1 = 34.9;
-        double _armDeg2 = 24.9;
-        double _armDeg3 = 54.9;
+        public static double _armDeg1 = 120.9;
+        public static double _armDeg2 = 24.9;
+        public static double _armDeg3 = 54.9;
 
 
-        public static double _direction = 270.6;
+        public static double _direction = 250.6;
         double _pitch = 3.4;
         double _roll = -1.2;
 

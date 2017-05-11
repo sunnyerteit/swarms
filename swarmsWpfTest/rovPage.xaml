@@ -51,6 +51,10 @@
             <Label Content="DEGREES" Grid.Row="1" Margin="20,25,0,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" FontSize="5" Foreground="White" />
             <Label x:Name="_lADirection" Content="NORTHEAST" Grid.Row="1" Margin="20,0,0,35" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" FontSize="5" Foreground="White" />
             <Label x:Name="_lCompassDegrees" Content="45" VerticalContentAlignment="Center" Margin="20,0,0,10" HorizontalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Foreground="White" Grid.Row="1" FontWeight="Bold" FontSize="18" Padding="0" />
+
+            
+            
+            <Label Content="Pitch and roll:" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Column="1"/>
         </Grid>
         <Label Content="Status self check" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="3"/>
         <Label Content="Alarms" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="6" Padding="0"/>
@@ -58,7 +62,7 @@
         <Label Content="Turbidity information here" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="11"/>
         <StackPanel Margin="0" Grid.Row="5" Orientation="Horizontal">
             <Label Content="Dynamic positioning" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
-            <RadioButton x:Name="_rDynPos" VerticalContentAlignment="Center" Margin="0,0,20,0" Checked="_checkDynPos" />
+            <RadioButton x:Name="_rDynPos" VerticalContentAlignment="Center" Margin="0,0,20,0" Checked="_checkDynPos" Background="White" />
             <Label Content="Drive" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
             <RadioButton x:Name="_rDrive" VerticalContentAlignment="Center" Margin="0,0,20,0" Checked="_checkDrive" />
             <Label Content="Follow" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>

@@ -26,6 +26,17 @@ namespace swarmsWpfTest
             _gripperFrame1.Content = new _gripperPage1(deg1, deg2, deg3);
             _gripperFrame2.Content = new _gripperPage2(deg1, deg2, deg3);
             _gripperFrame3.Content = new _gripperPage3(deg1, deg2, deg3);
+            updateArm();
+        }
+
+        private void updateArm()
+        {
+            ScaleTransform scaleTransform1 = new ScaleTransform(1, MainWindow._armDeg1 / 360.0, 0.5, 1.0);
+            _rDeg1.RenderTransform = scaleTransform1;
+            ScaleTransform scaleTransform2 = new ScaleTransform(1, MainWindow._armDeg2 / 360.0, 0.5, 1.0);
+            _rDeg2.RenderTransform = scaleTransform2;
+            ScaleTransform scaleTransform3 = new ScaleTransform(1, MainWindow._armDeg3 / 360.0, 0.5, 1.0);
+            _rDeg3.RenderTransform = scaleTransform2;
         }
     }
 }
