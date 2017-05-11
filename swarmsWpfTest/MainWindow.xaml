@@ -27,7 +27,7 @@
             <!--
             <Image Stretch="UniformToFill" Margin="0" Grid.Row="1" Source="https://maps.googleapis.com/maps/api/staticmap?center=Trondheim&amp;size=640x400&amp;style=element:labels|visibility:off&amp;style=element:geometry.stroke|visibility:off&amp;style=feature:landscape|element:geometry|saturation:-100&amp;style=feature:water|saturation:-100|invert_lightness:true&amp;key=AIzaSyAjxxE08yWi9ljXnpjfLS7pxR-RwdRVNKw" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             -->
-            <Image Stretch="UniformToFill" Margin="0" Grid.Row="1" Source="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAjxxE08yWi9ljXnpjfLS7pxR-RwdRVNKw&amp;center=63.433542800000005,10.4135718&amp;zoom=13&amp;format=png&amp;maptype=roadmap&amp;style=element:geometry%7Ccolor:0x262632&amp;style=element:labels.text.fill%7Ccolor:0x746855&amp;style=element:labels.text.stroke%7Ccolor:0x242f3e&amp;style=feature:administrative%7Celement:geometry%7Cvisibility:off&amp;style=feature:administrative.land_parcel%7Cvisibility:off&amp;style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:administrative.neighborhood%7Cvisibility:off&amp;style=feature:poi%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&amp;style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&amp;style=feature:road%7Celement:geometry%7Ccolor:0x38414e%7Cvisibility:off&amp;style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&amp;style=feature:road%7Celement:labels%7Cvisibility:off&amp;style=feature:road%7Celement:labels.icon%7Cvisibility:off&amp;style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&amp;style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&amp;style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&amp;style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&amp;style=feature:transit%7Cvisibility:off&amp;style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&amp;style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:water%7Celement:geometry%7Ccolor:0x3a3c4b&amp;style=feature:water%7Celement:labels.text%7Cvisibility:off&amp;style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&amp;style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&amp;size=2463x882" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Image x:Name="_mapImage" Stretch="UniformToFill" Margin="0" Grid.Row="1" Source="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAjxxE08yWi9ljXnpjfLS7pxR-RwdRVNKw&amp;center=63.433542800000005,10.4135718&amp;zoom=13&amp;format=png&amp;maptype=roadmap&amp;style=element:geometry%7Ccolor:0x262632&amp;style=element:labels.text.fill%7Ccolor:0x746855&amp;style=element:labels.text.stroke%7Ccolor:0x242f3e&amp;style=feature:administrative%7Celement:geometry%7Cvisibility:off&amp;style=feature:administrative.land_parcel%7Cvisibility:off&amp;style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:administrative.neighborhood%7Cvisibility:off&amp;style=feature:poi%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&amp;style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&amp;style=feature:road%7Celement:geometry%7Ccolor:0x38414e%7Cvisibility:off&amp;style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&amp;style=feature:road%7Celement:labels%7Cvisibility:off&amp;style=feature:road%7Celement:labels.icon%7Cvisibility:off&amp;style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&amp;style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&amp;style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&amp;style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&amp;style=feature:transit%7Cvisibility:off&amp;style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&amp;style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:water%7Celement:geometry%7Ccolor:0x3a3c4b&amp;style=feature:water%7Celement:labels.text%7Cvisibility:off&amp;style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&amp;style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&amp;size=2463x882" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <Grid  Margin="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -49,7 +49,7 @@
                             <ColumnDefinition Width="45*"/>
                             <ColumnDefinition Width="45*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Content="Camera 1:  angle 90°  / position 63.5678°N 10.400123° E / lights - on / condition - ok" Foreground="#FFFFFF" VerticalAlignment="Center" Grid.Column="2" Style="{StaticResource CustomFont}" HorizontalContentAlignment="Stretch" Height="26" Margin="0,5"/>
+                        <Label x:Name="labelTopRight" Content="Camera 1:  angle 90°  / position 63.5678°N 10.400123° E / lights - on / condition - ok" Foreground="#FFFFFF" VerticalAlignment="Center" Grid.Column="2" Style="{StaticResource CustomFont}" HorizontalContentAlignment="Stretch" Height="26" Margin="0,5"/>
                         <Image Margin="0,7,0,9" Source="image/video_play_icon.png" HorizontalAlignment="Right"/>
                         <!--Marginer må fikses-->
                         <Image Margin="0,7" Source="image/light_icon.png" Grid.Column="3"/>
@@ -70,7 +70,7 @@
                             <ColumnDefinition Width="45*"/>
                             <ColumnDefinition Width="45*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Content="Camera 1:  angle 90°  / position 63.5678°N 10.400123° E / lights - on / condition - ok" Foreground="#FFFFFF" VerticalAlignment="Center" Grid.Column="2" Style="{StaticResource CustomFont}" HorizontalContentAlignment="Stretch" Height="26" Margin="0,5"/>
+                        <Label x:Name="labelTopLeft" Content="Camera 1:  angle 90°  / position 63.5678°N 10.400123° E / lights - on / condition - ok" Foreground="#FFFFFF" VerticalAlignment="Center" Grid.Column="2" Style="{StaticResource CustomFont}" HorizontalContentAlignment="Stretch" Height="26" Margin="0,5"/>
                         <Image Margin="0,7,0,9" Source="image/video_play_icon.png" HorizontalAlignment="Right"/>
                         <!--Marginer må fikses-->
                         <Image Margin="0,7" Source="image/light_icon.png" Grid.Column="3"/>
@@ -101,7 +101,7 @@
                         <ColumnDefinition Width="337*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Project:" Grid.Column="1" Height="9" Margin="0,16,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7"/>
-                    <Label Content="Rosebud" Grid.Column="1" Height="15" Margin="0,25,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
+                    <Label x:Name="_lProjectName" Content="Rosebud" Grid.Column="1" Height="15" Margin="0,25,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
                 </Grid>
 
                 <Grid Margin="0" Grid.Row="1">
@@ -110,13 +110,13 @@
                         <ColumnDefinition Width="337*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="ROV name:" Grid.Column="1" Height="9" Margin="0,2,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7"/>
-                    <Label Content="Orson" Grid.Column="1" Height="15" Margin="0,11,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
+                    <Label x:Name="_lRovName" Content="Orson" Grid.Column="1" Height="15" Margin="0,11,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
                 </Grid>
                 <Label Content="Start time" Grid.Column="2" Height="9" Margin="0,16,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7"/>
-                <Label Content="11:59" Grid.Column="1" Height="15" Margin="0,25,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
+                <Label x:Name="_lStartTime" Content="11:59" Grid.Column="1" Height="15" Margin="0,25,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0"/>
 
                 <Label Content="Task:" Grid.Column="1" Height="9" Margin="0,2,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" FontSize="7" Grid.Row="1"/>
-                <Label Content="World peace" Grid.Column="1" Height="15" Margin="0,11,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" Grid.Row="1"/>
+                <Label x:Name="_lTask" Content="World peace" Grid.Column="1" Height="15" Margin="0,11,0,0" Width="75" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Padding="0" Grid.Row="1"/>
             </Grid>
             <Image HorizontalAlignment="Right" Height="18" Margin="0,16,16,0" VerticalAlignment="Top" Width="18" Source="image/clock_icon.png"/>
             <Grid Margin="0" Grid.Row="1">
