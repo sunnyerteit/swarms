@@ -70,7 +70,10 @@ namespace swarmsWpfTest
             _rovList dog5 = new _rovList() { nr = 5, lng = 63.4344, lat = 10.39567, depth = 1.6 };
 
 
+
             //If variable map is added:
+
+
             string _longitudeStr = _longitude.ToString("0.00000000000000000");
             string _latitudeStr = _latitude.ToString("0.00000000000000000");
             string _position = String.Format("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAjxxE08yWi9ljXnpjfLS7pxR-RwdRVNKw&amp;center={0},{1}&amp;zoom=13&amp;format=png&amp;maptype=roadmap&amp;style=element:geometry%7Ccolor:0x262632&amp;style=element:labels.text.fill%7Ccolor:0x746855&amp;style=element:labels.text.stroke%7Ccolor:0x242f3e&amp;style=feature:administrative%7Celement:geometry%7Cvisibility:off&amp;style=feature:administrative.land_parcel%7Cvisibility:off&amp;style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:administrative.neighborhood%7Cvisibility:off&amp;style=feature:poi%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&amp;style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&amp;style=feature:road%7Celement:geometry%7Ccolor:0x38414e%7Cvisibility:off&amp;style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&amp;style=feature:road%7Celement:labels%7Cvisibility:off&amp;style=feature:road%7Celement:labels.icon%7Cvisibility:off&amp;style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&amp;style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&amp;style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&amp;style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&amp;style=feature:transit%7Cvisibility:off&amp;style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&amp;style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:water%7Celement:geometry%7Ccolor:0x3a3c4b&amp;style=feature:water%7Celement:labels.text%7Cvisibility:off&amp;style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&amp;style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&amp;size=2463x882", _longitudeStr, _latitudeStr);
@@ -142,7 +145,9 @@ namespace swarmsWpfTest
         }
 
 
-        private double increment = 0;
+
+
+    private double increment = 0;
         private void dtTicker(object senderr, EventArgs e)
         {
             increment += 0.00001;
