@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Windows.Threading;
 
 namespace swarmsWpfTest
 {
@@ -21,6 +22,9 @@ namespace swarmsWpfTest
     /// </summary>
     public partial class MainWindow : Window
     {
+        String sURL = AppDomain.CurrentDomain.BaseDirectory + "html/index.html";
+
+
         string _projectName = "Orson";
         string _rovName = "Rosebud";
         TimeSpan _startTime = new TimeSpan(2, 14, 18);
@@ -105,6 +109,12 @@ namespace swarmsWpfTest
             _follow = rovPage.follow;
         }
 
+        private void dockPanel1Loaded(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri(sURL);
+            webBrowser1.Navigate(uri);
+        }
+
 
         //public static void updatePos(_dynPos, )
         //{
@@ -116,7 +126,7 @@ namespace swarmsWpfTest
         //    _dynPos = rovPage.
 
         //}
-        
+
 
     }
 }

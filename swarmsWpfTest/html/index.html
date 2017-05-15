@@ -1,0 +1,169 @@
+﻿<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map_canvas {
+            height: 100%;
+        }
+
+        #content {
+            width: 270px;
+            background-color: green;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript" src="http://maps.google.com.mx/maps/api/js?sensor=true&language=" en&AIzaSyCpavJgnp8Osbgo-5cmW4kLK0cCkt7RIq8""></script>
+    <script type="text/javascript">
+    var map;
+    var markers = [];
+    function initialize() {
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+            {
+                zoom: 16,
+                center: new google.maps.LatLng(63.43049, 10.395067),
+                mapTypeId: google.maps.MapTypeId.TERRAIN,
+                disableDefaultUI: true,
+                //zoomControl: true,
+                maxZoom: 16,
+                styles: [
+                    { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+                    { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+                    { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+                    {
+                        featureType: 'administrative.locality',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#d59563' }]
+                    },
+                    {
+                        featureType: 'poi',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#d59563' }]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'geometry',
+                        stylers: [{ color: '#263c3f' }]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#6b9a76' }]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry',
+                        stylers: [{ color: '#38414e' }]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry.stroke',
+                        stylers: [{ color: '#212a37' }]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#9ca5b3' }]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry',
+                        stylers: [{ color: '#746855' }]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry.stroke',
+                        stylers: [{ color: '#1f2835' }]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#f3d19c' }]
+                    },
+                    {
+                        featureType: 'transit',
+                        elementType: 'geometry',
+                        stylers: [{ color: '#2f3948' }]
+                    },
+                    {
+                        featureType: 'transit.station',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#d59563' }]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [{ color: '#17263c' }]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#515c6d' }]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.stroke',
+                        stylers: [{ color: '#17263c' }]
+                    }
+                ]
+            });
+        var hei = { lat: 63.43049, lng: 10.395067 };
+        var marker = new google.maps.Marker
+            ({
+                position: hei,
+                //icon: 'down2.png',
+                map: map,
+            });
+    }
+
+    function addMarker(Lat, Long) {
+        var latLng = new google.maps.LatLng(Lat, Long);
+        //var contentString = '<div id="content">' +
+        //    '<h1>' + Client + '</h1>' +
+        //    '<img src="' + Image + '" widht="180" height="180" style="margin: 0 auto; display:block"/>' +
+        //    '<br/><br/>' + Direction +
+        //    '</div>';
+        //var infowindow = new google.maps.InfoWindow({ content: contentString });
+
+        marker = new google.maps.Marker
+            ({
+                position: latLng,
+                //icon: 'icon_rov.png',
+                //title: "Click for show the data of the client"
+            });
+        markers.push(marker);
+        marker.setMap(map);
+    }
+
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    function clearMarkers() {
+        setMapOnAll(null);
+    }
+
+    function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+    }
+
+
+    </script>
+
+</head>
+<body onload="initialize()">
+    <div id="map_canvas"></div>
+</body>
+</html> 

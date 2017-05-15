@@ -173,5 +173,10 @@
     <Resource Include="image\_gripperSymbol.png" />
     <Resource Include="image\_rovSymbol.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="html\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
