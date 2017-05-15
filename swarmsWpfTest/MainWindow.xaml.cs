@@ -63,6 +63,12 @@ namespace swarmsWpfTest
             rightBotFrame.Content = new gripperPage(_armDeg1,_armDeg2,_armDeg3);
             //rightFrame.Content = new rovControl();
 
+            _rovList dog1 = new _rovList() { nr = 1, lng = 63.4304, lat = 10.39517, depth = 5.6 };
+            _rovList dog2 = new _rovList() { nr = 2, lng = 63.4314, lat = 10.39527, depth = 4.6 };
+            _rovList dog3 = new _rovList() { nr = 3, lng = 63.4324, lat = 10.39537, depth = 3.6 };
+            _rovList dog4 = new _rovList() { nr = 4, lng = 63.4334, lat = 10.39547, depth = 2.6 };
+            _rovList dog5 = new _rovList() { nr = 5, lng = 63.4344, lat = 10.39567, depth = 1.6 };
+
 
             //If variable map is added:
             string _longitudeStr = _longitude.ToString("0.00000000000000000");
@@ -78,6 +84,7 @@ namespace swarmsWpfTest
             labelTopLeft.Content = "Camera 1:  angle " + _angleCamera1 + "°  / position " + _longitude + " °N " + _latitude + " °E / lights - " + _lights + " / condition - " + _condition;
             labelTopRight.Content = "Camera 2:  angle " + _angleCamera2 + "°  / position " + _longitude + " °N " + _latitude + " °E / lights - " + _lights + " / condition - " + _condition;
         }
+
 
         //Displays current time
         private void displayTime()
@@ -115,18 +122,46 @@ namespace swarmsWpfTest
             webBrowser1.Navigate(uri);
         }
 
-
-        //public static void updatePos(_dynPos, )
-        //{
-        //    rovPage.dynPos(_dynPos);
-        //}
-
-        //public void mainGetPositionMethod()
-        //{
-        //    _dynPos = rovPage.
-
-        //}
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Tick += dtTicker;
+            dt.Start();
+        }
 
 
+
+        //Need to structure better
+        public class _rovList
+        {
+            public int nr;
+            public double lng;
+            public double lat;
+            public double depth;
+        }
+
+
+        private double increment = 0;
+        private void dtTicker(object senderr, EventArgs e)
+        {
+            increment += 0.00001;
+            webBrowser1.InvokeScript("deleteMarkers", new Object[] { });
+            webBrowser1.InvokeScript("addMarker", new Object[] { 63.43045 + increment, 10.39517 + increment });
+            webBrowser1.InvokeScript("addMarker", new Object[] { 63.43045 - increment, 10.39517 + increment });
+
+        }
+            //public static void updatePos(_dynPos, )
+            //{
+            //    rovPage.dynPos(_dynPos);
+            //}
+
+            //public void mainGetPositionMethod()
+            //{
+            //    _dynPos = rovPage.
+
+            //}
+
+
+        }
     }
-}
