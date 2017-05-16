@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Threading;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace swarmsWpfTest
 {
@@ -150,6 +152,10 @@ namespace swarmsWpfTest
     private double increment = 0;
         private void dtTicker(object senderr, EventArgs e)
         {
+            double[] _jsonRoute = new double[] { 63.43045, 10.39517, 63.44155, 10.39517, 63.43155, 10.39627 };
+            string outputJson = JsonConvert.SerializeObject(_jsonRoute);
+
+            webBrowser1.InvokeScript("_jsonRoute", new Object[] { outputJson });
             increment += 0.00001;
             webBrowser1.InvokeScript("deleteMarkers", new Object[] { });
             webBrowser1.InvokeScript("addMarker", new Object[] { 63.43045 + increment, 10.39517 + increment });

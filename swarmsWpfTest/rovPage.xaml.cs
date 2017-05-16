@@ -124,6 +124,11 @@ namespace swarmsWpfTest
         }
 
 
+        private void updatePitchRoll()
+        {
+            RotateTransform rotateTransform = new RotateTransform(MainWindow._direction);
+            _pitch.RenderTransform = rotateTransform;
+        }
 
         //public static void updatePosMet(bool p_dynPos, bool p_drive, bool p_follow)
         //{
