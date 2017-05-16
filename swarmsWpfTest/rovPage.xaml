@@ -57,7 +57,7 @@
             <Label Content="Pitch and roll:" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Column="1"/>
 
             <Image Source="image/_staticCompass.png" Margin="20,0,0,10" Grid.Row="1" Grid.Column="1" />
-            <Image x:Name="_pitch" Source="image/_dynamicCompass.png" Margin="20,0,0,10" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Grid.Column="1" />
+            <Image x:Name="_iPitchRoll" Source="image/_dynamicCompass.png" Margin="20,0,0,10" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Grid.Column="1" />
         </Grid>
         <Label Content="Status self check" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="3"/>
         <Label Content="Alarms" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="6" Padding="0"/>

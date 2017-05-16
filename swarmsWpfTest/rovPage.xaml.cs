@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace swarmsWpfTest
 {
@@ -43,6 +44,7 @@ namespace swarmsWpfTest
             follow = _follow;
 
             updateDegrees();
+            updatePitchRoll();
 
         }
 
@@ -126,8 +128,67 @@ namespace swarmsWpfTest
 
         private void updatePitchRoll()
         {
-            RotateTransform rotateTransform = new RotateTransform(MainWindow._direction);
-            _pitch.RenderTransform = rotateTransform;
+            RotateTransform rotateTransform = new RotateTransform(MainWindow._roll);
+            _iPitchRoll.RenderTransform = rotateTransform;
+
+
+            if (MainWindow._pitch % 360 < 2.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 7.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/clock_icon.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 12.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 17.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 22.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 27.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 180.0)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            //////////////////////
+            else if (MainWindow._pitch % 360 < 332.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/clock_icon.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 337.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/clock_icon.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 342.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 347.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 352.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else if (MainWindow._pitch % 360 < 357.5)
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
+            else
+            {
+                _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
+            }
         }
 
         //public static void updatePosMet(bool p_dynPos, bool p_drive, bool p_follow)
