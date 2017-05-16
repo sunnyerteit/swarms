@@ -29,6 +29,46 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <Style TargetType="{x:Type RadioButton}" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <BulletDecorator Background="{x:Null}" Cursor="Hand">
+                            <BulletDecorator.Bullet>
+                                <Grid Height="16" Width="16">
+                                    <!--Define size of the Bullet-->
+
+                                    <!--The two borders-->
+                                    <Border Name="RadioOuter" Background="Transparent" BorderBrush="#FFF3F4F5" BorderThickness="1" CornerRadius="90" />
+                                    <Border CornerRadius="90" Margin="4" Name="RadioMark" Background="#FFF3F4F5" Visibility="Hidden" />
+
+                                </Grid>
+                            </BulletDecorator.Bullet>
+
+                            <!--Text element-->
+                            <TextBlock Margin="3,1,0,0" Foreground="{x:Null}" FontFamily="Calibri" FontSize="12">
+       <ContentPresenter />
+                            </TextBlock>
+                        </BulletDecorator>
+
+                        <!--If item is checked, trigger the visibility of the mark-->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+
+                                <!--If item is checked, trigger the visibility of the mark
+and change the color of the selected bullet into a darker gray for better highlighting-->
+                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                <!--<Setter TargetName="RadioOuter" Property="BorderBrush" Value="#FFADADAD" />-->
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Page.Resources>
 
     <Grid>
@@ -83,17 +123,17 @@
             <Image x:Name="_iPitchRoll" Source="image/_dynamicCompass.png" Margin="20,0,0,10" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Grid.Column="1" />
         </Grid>
         <Label Content="Status self check" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="3"/>
-        <CheckBox Grid.Row="3" Margin="0,10,40,10" HorizontalContentAlignment="Right" HorizontalAlignment="Right" />
+        <CheckBox x:Name="_cStatusSelfCheck" Grid.Row="3" Margin="0,10,40,10" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Checked="_cStatusChecked" Unchecked="_cStatusUnchecked" />
         <Label Content="Alarms" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="6" Padding="0"/>
         <Label Content="Sensors" Margin="0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto" Grid.Row="8" Padding="0"/>
         <Label Content="Turbidity information here" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="11"/>
         <StackPanel Margin="0" Grid.Row="5" Orientation="Horizontal">
             <Label Content="Dynamic positioning" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
-            <RadioButton x:Name="_rDynPos" VerticalContentAlignment="Center" Margin="0,0,20,0" Checked="_checkDynPos" Background="White" />
+            <RadioButton x:Name="_rDynPos" VerticalContentAlignment="Center" Margin="10,0,20,0" Checked="_checkDynPos" Background="White" VerticalAlignment="Center" />
             <Label Content="Drive" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
-            <RadioButton x:Name="_rDrive" VerticalContentAlignment="Center" Margin="0,0,20,0" Checked="_checkDrive" />
+            <RadioButton x:Name="_rDrive" VerticalContentAlignment="Center" Margin="10,0,20,0" Checked="_checkDrive" VerticalAlignment="Center" />
             <Label Content="Follow" Margin="20,0,0,0" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="/swarmsWpfTest;component/fonts/#Roboto Light" Grid.Row="5"/>
-            <RadioButton x:Name="_rFollow" VerticalContentAlignment="Center" Checked="_checkFollow" />
+            <RadioButton x:Name="_rFollow" VerticalContentAlignment="Center" Checked="_checkFollow" VerticalAlignment="Center" Margin="10,0,0,0" />
         </StackPanel>
 
     </Grid>

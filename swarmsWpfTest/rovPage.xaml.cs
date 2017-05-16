@@ -21,9 +21,12 @@ namespace swarmsWpfTest
     /// </summary>
     public partial class rovPage : Page
     {
-            public static bool dynPos = false;
-            public static bool drive = false;
-            public static bool follow = false;
+        public static bool dynPos = false;
+        public static bool drive = false;
+        public static bool follow = false;
+
+        public static bool selfCheck = false;
+            
         public rovPage(bool _dynPos, bool _drive, bool _follow)
         {
             InitializeComponent();
@@ -39,6 +42,16 @@ namespace swarmsWpfTest
             {
                 _rFollow.IsChecked = true;
             }
+
+            if (MainWindow._selfCheck == false)
+            {
+                _cStatusSelfCheck.IsChecked = false;
+            }
+            else
+            {
+                _cStatusSelfCheck.IsChecked = true;
+            }
+
             dynPos = _dynPos;
             drive = _drive;
             follow = _follow;
@@ -131,7 +144,6 @@ namespace swarmsWpfTest
             RotateTransform rotateTransform = new RotateTransform(MainWindow._roll);
             _iPitchRoll.RenderTransform = rotateTransform;
 
-
             if (MainWindow._pitch % 360 < 2.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
@@ -189,6 +201,23 @@ namespace swarmsWpfTest
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_dynamicCompass.png", UriKind.Relative));
             }
+        }
+
+
+        ///
+
+        private void _cStatusChecked(object sender, RoutedEventArgs e)
+        {
+            Trace.WriteLine("ctext");
+
+            MainWindow._selfCheck = true;
+        }
+
+        private void _cStatusUnchecked(object sender, RoutedEventArgs e)
+        {
+            Trace.WriteLine("utext");
+
+            MainWindow._selfCheck = false;
         }
 
         //public static void updatePosMet(bool p_dynPos, bool p_drive, bool p_follow)

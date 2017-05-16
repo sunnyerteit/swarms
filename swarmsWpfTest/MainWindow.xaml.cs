@@ -51,7 +51,7 @@ namespace swarmsWpfTest
         public static double _pitch = -35.0;
         public static double _roll = -60.2;
 
-        bool _selfCheck = true;
+        public static bool _selfCheck = false;
         static bool _dynPos = false;
         static bool _drive = true;
         static bool _follow = false;
