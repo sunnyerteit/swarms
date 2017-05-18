@@ -148,15 +148,15 @@ namespace swarmsWpfTest
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Interval = TimeSpan.FromMilliseconds(100);
             dt.Tick += dtTicker;
             dt.Start();
         }
 
         private void dtTicker(object sender, EventArgs e)
         {
-            RotateTransform rotateTransform = new RotateTransform(MainWindow._roll);
-            _iPitchRoll.RenderTransform = rotateTransform;
+            RotateTransform rotateTransform1 = new RotateTransform(MainWindow._roll);
+            _iPitchRoll.RenderTransform = rotateTransform1;
 
             if (MainWindow._pitch % 360 < 2.5)
             {
@@ -214,6 +214,47 @@ namespace swarmsWpfTest
             else
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr0.png", UriKind.Relative));
+            }
+            //////////
+
+            _lCompassDegrees.Content = MainWindow._direction.ToString("0.");
+            RotateTransform rotateTransform2 = new RotateTransform(-MainWindow._direction + 45);
+            _iDynamicCompass.RenderTransform = rotateTransform2;
+            if (MainWindow._direction % 360 < 22.5)
+            {
+                _lADirection.Content = "NORTH";
+            }
+            else if (MainWindow._direction % 360 < 67.5)
+            {
+                _lADirection.Content = "NORTHEAST";
+            }
+            else if (MainWindow._direction % 360 < 112.5)
+            {
+                _lADirection.Content = "EAST";
+            }
+            else if (MainWindow._direction % 360 < 157.5)
+            {
+                _lADirection.Content = "SOUTHEAST";
+            }
+            else if (MainWindow._direction % 360 < 202.5)
+            {
+                _lADirection.Content = "SOUTH";
+            }
+            else if (MainWindow._direction % 360 < 247.5)
+            {
+                _lADirection.Content = "SOUTHWEST";
+            }
+            else if (MainWindow._direction % 360 < 292.5)
+            {
+                _lADirection.Content = "WEST";
+            }
+            else if (MainWindow._direction % 360 < 337.5)
+            {
+                _lADirection.Content = "NORTHWEST";
+            }
+            else
+            {
+                _lADirection.Content = "NORTH";
             }
         }
 

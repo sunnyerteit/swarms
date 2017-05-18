@@ -166,6 +166,7 @@ namespace swarmsWpfTest
             _depth = _jsonDepth[0];
             _pitch += increment * 50000 * (random.NextDouble() - 0.5);
             _roll += increment * 50000 * (random.NextDouble() - 0.5);
+            _direction += increment * 50000 * (random.NextDouble() - 0.5);
 
             //rovPage.PitchRoll();
 
