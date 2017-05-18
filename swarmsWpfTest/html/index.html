@@ -170,9 +170,18 @@
         //var infowindow = new google.maps.InfoWindow({ content: contentString });
         var depth = 6.0;
         var markerLabel = 'GO!';
+        var markerIcon = {
+            url: 'http://image.flaticon.com/icons/svg/252/252025.svg',
+            scaledSize: new google.maps.Size(40, 40),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(20, 20),
+            labelOrigin: new google.maps.Point(40, 50)
+        };
+
         marker = new google.maps.Marker
             ({
-                position: latLng,
+            position: latLng,
+            icon: markerIcon,
                 label: {
                     text: depth.toString(),
                     color: "#FFFFFF",

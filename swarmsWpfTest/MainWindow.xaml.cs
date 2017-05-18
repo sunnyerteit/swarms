@@ -154,8 +154,10 @@ namespace swarmsWpfTest
         private void dtTicker(object senderr, EventArgs e)
         {
             double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 };
+            double[] _jsonDepth = new double[] { 3.6 + increment * 1000, 1.6 + increment * (-1000), 3.6 + increment * (-100) };
             double[] _jsonRoute = new double[] { 63.43045 , 10.39517 , 63.44155, 10.39517, 63.43155, 10.39627 };
             string outputJson = JsonConvert.SerializeObject(_jsonRoute);
+            string outputJsonDepth = JsonConvert.SerializeObject(_jsonDepth);
             string outputJson2 = JsonConvert.SerializeObject(_jsonMarker);
 
             _longitude = _jsonMarker[0];
