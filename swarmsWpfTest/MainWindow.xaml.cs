@@ -132,8 +132,20 @@ namespace swarmsWpfTest
             dt.Interval = TimeSpan.FromSeconds(1);
             dt.Tick += dtTicker;
             dt.Start();
+
+            DispatcherTimer dtt = new DispatcherTimer();
+            dtt.Interval = TimeSpan.FromMilliseconds(100);
+            dtt.Tick += dttTicker;
+            dtt.Start();
         }
 
+        public void dttTicker(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            _pitch += increment * 50000 * (random.NextDouble() - 0.5);
+            _roll += increment * 50000 * (random.NextDouble() - 0.5);
+            _direction += increment * 50000 * (random.NextDouble() - 0.5);
+        }
 
 
         //Need to structure better
@@ -164,9 +176,7 @@ namespace swarmsWpfTest
             _longitude = _jsonMarker[0];
             _latitude = _jsonMarker[1];
             _depth = _jsonDepth[0];
-            _pitch += increment * 50000 * (random.NextDouble() - 0.5);
-            _roll += increment * 50000 * (random.NextDouble() - 0.5);
-            _direction += increment * 50000 * (random.NextDouble() - 0.5);
+
 
             //rovPage.PitchRoll();
 

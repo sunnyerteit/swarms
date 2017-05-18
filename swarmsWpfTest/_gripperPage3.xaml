@@ -10,7 +10,10 @@
       Title="_gripperPage3">
 
     <Grid>
-        <helix:HelixViewport3D x:Name="viewPort3d" ZoomExtentsWhenLoaded="true" Grid.RowSpan="2" ShowCameraInfo="True" Orthographic="True" >
+        <helix:HelixViewport3D x:Name="viewPort3d" ZoomExtentsWhenLoaded="false" Grid.RowSpan="2" ShowCameraInfo="True" Orthographic="True" >
+            <helix:HelixViewport3D.Camera>
+                <OrthographicCamera  Position="46, 154, 6" LookDirection="-46, 0, -1" UpDirection="0, 0, 1" Width="362"/>
+            </helix:HelixViewport3D.Camera>
             <!-- Remember to add light to the scene -->
             <helix:DefaultLights/>
         </helix:HelixViewport3D>

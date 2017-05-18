@@ -94,11 +94,16 @@ namespace swarmsWpfTest
             MainWindow.updateDynPos();
         }
         
+        int mod(int x, int m)
+        {
+            int r = x % m;
+            return r < 0 ? r + m : r;
+        }
 
         //Updates the compass in rovPage.xaml
         private void updateDegrees()
         {
-            _lCompassDegrees.Content = MainWindow._direction.ToString("0.");
+            _lCompassDegrees.Content = (MainWindow._direction % 360).ToString("0.");
             RotateTransform rotateTransform = new RotateTransform( - MainWindow._direction + 45);
             _iDynamicCompass.RenderTransform = rotateTransform;
             if (MainWindow._direction % 360 < 22.5)
@@ -139,11 +144,6 @@ namespace swarmsWpfTest
             }
         }
 
-        int mod(int x, int m)
-        {
-            int r = x % m;
-            return r < 0 ? r + m : r;
-        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -217,7 +217,7 @@ namespace swarmsWpfTest
             }
             //////////
 
-            _lCompassDegrees.Content = MainWindow._direction.ToString("0.");
+            _lCompassDegrees.Content = (MainWindow._direction % 360).ToString("0.");
             RotateTransform rotateTransform2 = new RotateTransform(-MainWindow._direction + 45);
             _iDynamicCompass.RenderTransform = rotateTransform2;
             if (MainWindow._direction % 360 < 22.5)

@@ -47,8 +47,8 @@ namespace swarmsWpfTest
             RoboticArm.Content = Initialize_Environment(MODEL_PATH1, MODEL_PATH2, MODEL_PATH3, MODEL_PATH4, deg1, deg2, deg3);
             // Add to view port
             viewPort3d.Children.Add(RoboticArm);
-            viewPort3d.Camera.LookDirection = new Vector3D(0, 0, 47.218);
-            viewPort3d.Camera.UpDirection = new Vector3D(0, 1, 0);
+            //viewPort3d.Camera.LookDirection = new Vector3D(0, 0, 47.218);
+            //viewPort3d.Camera.UpDirection = new Vector3D(0, 1, 0);
             viewPort3d.Camera.NearPlaneDistance = -1400;
         }
 
