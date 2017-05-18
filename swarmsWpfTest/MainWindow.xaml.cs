@@ -45,6 +45,7 @@ namespace swarmsWpfTest
         public static double _armDeg1 = 20.9;
         public static double _armDeg2 = 24.9;
         public static double _armDeg3 = 54.9;
+        public static double _armDeg4 = 0;
 
 
         public static double _direction = 250.6;
@@ -145,6 +146,10 @@ namespace swarmsWpfTest
             _pitch += increment * 50000 * (random.NextDouble() - 0.5);
             _roll += increment * 50000 * (random.NextDouble() - 0.5);
             _direction += increment * 50000 * (random.NextDouble() - 0.5);
+            _armDeg1 += 2 * (random.NextDouble() - 0.5);
+            _armDeg2 += 2 * (random.NextDouble() - 0.5);
+            _armDeg3 += 2 * (random.NextDouble() - 0.5);
+            _armDeg4 += 2;
         }
 
 
