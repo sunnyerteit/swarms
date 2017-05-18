@@ -139,6 +139,12 @@ namespace swarmsWpfTest
             }
         }
 
+        int mod(int x, int m)
+        {
+            int r = x % m;
+            return r < 0 ? r + m : r;
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer dt = new DispatcherTimer();
