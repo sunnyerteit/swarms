@@ -160,7 +160,7 @@
         //    });
     }
 
-    function addMarker(Lat, Long) {
+    function addMarker(Lat, Long, depth) {
         var latLng = new google.maps.LatLng(Lat, Long);
         //var contentString = '<div id="content">' +
         //    '<h1>' + Client + '</h1>' +
@@ -168,7 +168,6 @@
         //    '<br/><br/>' + Direction +
         //    '</div>';
         //var infowindow = new google.maps.InfoWindow({ content: contentString });
-        var depth = 6.0;
         var markerLabel = 'GO!';
         var markerIcon = {
             url: 'http://image.flaticon.com/icons/svg/252/252025.svg',
@@ -235,10 +234,11 @@
     }
 
 
-    function _markerList(array) {
-        var objMarker = JSON.parse(array)
+    function _markerList(array, arrayDepth) {
+        var objMarker = JSON.parse(array);
+        var objDepth = JSON.parse(arrayDepth);
         for (i = 0; i < objMarker.length / 2; i++) {
-            addMarker(objMarker[2 * i], objMarker[2 * i + 1]);
+            addMarker(objMarker[2 * i], objMarker[2 * i + 1], objDepth[i]);
         }
         var center = new google.maps.LatLng(objMarker[0], objMarker[1]);
         map.panTo(center);
