@@ -48,8 +48,8 @@ namespace swarmsWpfTest
 
 
         public static double _direction = 250.6;
-        public static double _pitch = 25.0;
-        public static double _roll = 10.2;
+        public static double _pitch = 0.0;
+        public static double _roll = 0.0;
 
         public static bool _selfCheck = false;
         static bool _dynPos = false;
@@ -159,11 +159,13 @@ namespace swarmsWpfTest
             string outputJsonDepth = JsonConvert.SerializeObject(_jsonDepth);
             string outputJson2 = JsonConvert.SerializeObject(_jsonMarker);
 
+            Random random = new Random();
+
             _longitude = _jsonMarker[0];
             _latitude = _jsonMarker[1];
             _depth = _jsonDepth[0];
-            _pitch += increment;
-            _roll += increment * 1000000;
+            _pitch += increment * 50000 * (random.NextDouble() - 0.5);
+            _roll += increment * 50000 * (random.NextDouble() - 0.5);
 
             //rovPage.PitchRoll();
 

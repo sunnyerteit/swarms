@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:swarmsWpfTest"
       mc:Ignorable="d" 
       d:DesignHeight="686.5" d:DesignWidth="337.5"
-      Title="rovPage" Height="Auto" Width="Auto">
+      Title="rovPage" Height="Auto" Width="Auto" Loaded="Window_Loaded">
     <Page.Resources>
         <Image Source="image/_on.png" x:Key="imgOn"/>
         <Image Source="image/_off.png" x:Key="imgOff"/>
