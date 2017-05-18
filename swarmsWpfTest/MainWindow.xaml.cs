@@ -130,7 +130,7 @@ namespace swarmsWpfTest
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Interval = TimeSpan.FromSeconds(10);
             dt.Tick += dtTicker;
             dt.Start();
 

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HelixToolkit.Wpf;
 using System.Windows.Media.Media3D;
+using System.Windows.Threading;
 
 namespace swarmsWpfTest
 {
@@ -108,6 +109,49 @@ namespace swarmsWpfTest
 
             }
             return RA;
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromMilliseconds(100);
+            dt.Tick += _robotMove;
+            dt.Start();
+        }
+
+        private void _robotMove(object sender, EventArgs e)
+        {
+            Transform3DGroup F1 = new Transform3DGroup();
+            Transform3DGroup F2 = new Transform3DGroup();
+            Transform3DGroup F3 = new Transform3DGroup();
+            Transform3DGroup F4 = new Transform3DGroup();
+
+            R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), MainWindow._armDeg1), new Point3D(0, 0, 0));
+            F1.Children.Add(R);
+
+            T = new TranslateTransform3D(0, 100, 0);
+            R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 0, 0), MainWindow._armDeg2), new Point3D(0, 100, 0));
+            F2.Children.Add(T);
+            F2.Children.Add(R);
+            F2.Children.Add(F1);
+
+
+            T = new TranslateTransform3D(0, 550, 0);
+            R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), MainWindow._armDeg3), new Point3D(0, 550, 0));
+            F3.Children.Add(T);
+            F3.Children.Add(R);
+            F3.Children.Add(F2);
+
+            T = new TranslateTransform3D(0, 450, 0);
+            R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), MainWindow._armDeg4), new Point3D(0, 450, 0));
+            F4.Children.Add(T);
+            F4.Children.Add(R);
+            F4.Children.Add(F3);
+
+
+            link1.Transform = F1;
+            link2.Transform = F2;
+            link3.Transform = F3;
+            link4.Transform = F4;
         }
     }
 }

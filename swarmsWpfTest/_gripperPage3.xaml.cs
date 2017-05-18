@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HelixToolkit.Wpf;
 using System.Windows.Media.Media3D;
+using System.Windows.Threading;
 
 namespace swarmsWpfTest
 {
@@ -74,6 +75,26 @@ namespace swarmsWpfTest
 
             }
             return RA;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromMilliseconds(100);
+            dt.Tick += _robotMove;
+            dt.Start();
+        }
+
+
+        private void _robotMove(object sender, EventArgs e)
+        {
+            Transform3DGroup F1 = new Transform3DGroup();
+
+            R = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), MainWindow._armDeg4), new Point3D(0, 0, 0));
+            F1.Children.Add(R);
+
+
+            link1.Transform = F1;
         }
     }
 }
