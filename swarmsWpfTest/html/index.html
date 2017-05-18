@@ -115,13 +115,13 @@
                     }
                 ]
             });
-        var hei = { lat: 63.43049, lng: 10.395067 };
-        var marker = new google.maps.Marker
-            ({
-                position: hei,
-                //icon: 'down2.png',
-                map: map,
-            });
+        //var hei = { lat: 63.43049, lng: 10.395067 };
+        //var marker = new google.maps.Marker
+        //    ({
+        //        position: hei,
+        //        //icon: 'down2.png',
+        //        map: map,
+        //    });
     }
 
     function addMarker(Lat, Long) {
@@ -184,6 +184,16 @@
         })
 
         rovPath.setMap(map);
+    }
+
+
+    function _markerList(array) {
+        var objMarker = JSON.parse(array)
+        for (i = 0; i < objMarker.length / 2; i++) {
+            addMarker(objMarker[2 * i], objMarker[2 * i + 1]);
+        }
+        var center = new google.maps.LatLng(objMarker[0], objMarker[1]);
+        map.panTo(center);
     }
 
     </script>

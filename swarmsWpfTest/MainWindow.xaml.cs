@@ -149,17 +149,19 @@ namespace swarmsWpfTest
 
 
 
-    private double increment = 0;
+        private double increment = 0;
+
         private void dtTicker(object senderr, EventArgs e)
         {
-            double[] _jsonRoute = new double[] { 63.43045, 10.39517, 63.44155, 10.39517, 63.43155, 10.39627 };
+            double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 };
+            double[] _jsonRoute = new double[] { 63.43045 , 10.39517 , 63.44155, 10.39517, 63.43155, 10.39627 };
             string outputJson = JsonConvert.SerializeObject(_jsonRoute);
+            string outputJson2 = JsonConvert.SerializeObject(_jsonMarker);
 
             webBrowser1.InvokeScript("_jsonRoute", new Object[] { outputJson });
             increment += 0.00001;
             webBrowser1.InvokeScript("deleteMarkers", new Object[] { });
-            webBrowser1.InvokeScript("addMarker", new Object[] { 63.43045 + increment, 10.39517 + increment });
-            webBrowser1.InvokeScript("addMarker", new Object[] { 63.43045 - increment, 10.39517 + increment });
+            webBrowser1.InvokeScript("_markerList", new Object[] { outputJson2 });
 
         }
             //public static void updatePos(_dynPos, )
