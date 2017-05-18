@@ -81,6 +81,8 @@
                     </Grid>
                 </Grid>
             </Grid>
+
+            <Border BorderBrush="#FFD27382" BorderThickness="10,3,10,0" VerticalAlignment="Bottom" />
         </Grid>
         <Grid Grid.Column="1" Margin="0">
             <Grid.RowDefinitions>
@@ -172,5 +174,6 @@
             -->
         </Grid>
 
+        <Border BorderBrush="#FFD27382" BorderThickness="1.5,10,0,10" HorizontalAlignment="Left" Grid.Column="1" />
     </Grid>
 </Window>
