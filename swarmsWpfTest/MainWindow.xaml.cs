@@ -150,10 +150,9 @@ namespace swarmsWpfTest
 
         private double increment = 0;
 
-        public void dtTicker(object senderr, EventArgs e)
+        public void dtTicker(object sender, EventArgs e)
         {
             double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 , 63.43035 , 10.39507 };
-            //double[] _jsonDepth = new double[] { 3.6 , 1.6 , 3.6 };
             double[] _jsonDepth = new double[] { 3.6 + increment * 1000, 1.6 + increment * (-1000), 2.6 + increment * (-100) , 0.0 + increment * 10000 };
             double[] _jsonRoute = new double[] { 63.43045 , 10.39517 , 63.44155, 10.39517, 63.43155, 10.39627 };
             string outputJson = JsonConvert.SerializeObject(_jsonRoute);
@@ -164,10 +163,9 @@ namespace swarmsWpfTest
             _latitude = _jsonMarker[1];
             _depth = _jsonDepth[0];
             _pitch += increment;
-            _roll += increment * 10000;
+            _roll += increment * 1000000;
 
-            //rovPage.updatePitchRoll();
-
+            //rovPage.PitchRoll();
 
             rightTopFrame.Content = new positionPage(_longitude, _latitude, _depth, _sog, _heading);
             string _longitudeStr = _longitude.ToString("0.00000000000000000");

@@ -52,7 +52,7 @@ namespace swarmsWpfTest
                 _cStatusSelfCheck.IsChecked = true;
             }
 
-            dynPos = _dynPos;
+            dynPos = _dynPos; 
             drive = _drive;
             follow = _follow;
 
@@ -138,8 +138,7 @@ namespace swarmsWpfTest
             }
         }
 
-
-        public void updatePitchRoll()
+        private void updatePitchRoll()
         {
             RotateTransform rotateTransform = new RotateTransform(MainWindow._roll);
             _iPitchRoll.RenderTransform = rotateTransform;
