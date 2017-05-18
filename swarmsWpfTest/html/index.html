@@ -168,9 +168,33 @@
         //    '<br/><br/>' + Direction +
         //    '</div>';
         //var infowindow = new google.maps.InfoWindow({ content: contentString });
-        var markerLabel = 'GO!';
+        if (depth < 0.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else if (depth < 1.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else if (depth < 2.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else if (depth < 3.5) {
+            var markerImage = 'http://maplacejs.com/website/images/red-dot.png';
+        } else if (depth < 4.5) {
+            var markerImage = 'http://www.clker.com/cliparts/e/3/F/I/0/A/google-maps-marker-for-residencelamontagne-hi.png';
+        } else if (depth < 5.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else if (depth < 6.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else if (depth < 7.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else if (depth < 8.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else if (depth < 9.5) {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        } else {
+            var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+        }
+
         var markerIcon = {
-            url: 'http://image.flaticon.com/icons/svg/252/252025.svg',
+            //url: 'http://image.flaticon.com/icons/svg/252/252025.svg',
+            url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(20, 20),
@@ -182,7 +206,7 @@
             position: latLng,
             icon: markerIcon,
                 label: {
-                    text: depth.toString(),
+                    text: depth.toFixed(2) + ' m',
                     color: "#FFFFFF",
                 },
             });
@@ -206,6 +230,7 @@
         markers = [];
     }
 
+    // Establish route from JSONarray
     function _jsonRoute(array) {
         var obj = JSON.parse(array);
         route = [];
@@ -233,13 +258,16 @@
         rovPath.setMap(map);
     }
 
-
+    // Establish markers from JSONarray
     function _markerList(array, arrayDepth) {
         var objMarker = JSON.parse(array);
         var objDepth = JSON.parse(arrayDepth);
         for (i = 0; i < objMarker.length / 2; i++) {
             addMarker(objMarker[2 * i], objMarker[2 * i + 1], objDepth[i]);
         }
+
+
+        // Follow the main ROV
         var center = new google.maps.LatLng(objMarker[0], objMarker[1]);
         map.panTo(center);
     }

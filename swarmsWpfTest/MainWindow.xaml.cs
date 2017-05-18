@@ -38,7 +38,7 @@ namespace swarmsWpfTest
         bool _condition = false;
         double _angleCamera1 = 89.9;
         double _angleCamera2 = 50.9;
-        double _depth = 10.4;
+        public static double _depth = 10.4;
         double _sog = 3.2;
         string _heading = "Home";
 
@@ -78,7 +78,6 @@ namespace swarmsWpfTest
 
             string _longitudeStr = _longitude.ToString("0.00000000000000000");
             string _latitudeStr = _latitude.ToString("0.00000000000000000");
-            //string _position = String.Format("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAjxxE08yWi9ljXnpjfLS7pxR-RwdRVNKw&amp;center={0},{1}&amp;zoom=13&amp;format=png&amp;maptype=roadmap&amp;style=element:geometry%7Ccolor:0x262632&amp;style=element:labels.text.fill%7Ccolor:0x746855&amp;style=element:labels.text.stroke%7Ccolor:0x242f3e&amp;style=feature:administrative%7Celement:geometry%7Cvisibility:off&amp;style=feature:administrative.land_parcel%7Cvisibility:off&amp;style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:administrative.neighborhood%7Cvisibility:off&amp;style=feature:poi%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text%7Cvisibility:off&amp;style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&amp;style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&amp;style=feature:road%7Celement:geometry%7Ccolor:0x38414e%7Cvisibility:off&amp;style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&amp;style=feature:road%7Celement:labels%7Cvisibility:off&amp;style=feature:road%7Celement:labels.icon%7Cvisibility:off&amp;style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&amp;style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&amp;style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&amp;style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&amp;style=feature:transit%7Cvisibility:off&amp;style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&amp;style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&amp;style=feature:water%7Celement:geometry%7Ccolor:0x3a3c4b&amp;style=feature:water%7Celement:labels.text%7Cvisibility:off&amp;style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&amp;style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&amp;size=2463x882", _longitudeStr, _latitudeStr);
 
             _lProjectName.Content = _projectName;
             _lRovName.Content = _rovName;
@@ -153,9 +152,9 @@ namespace swarmsWpfTest
 
         private void dtTicker(object senderr, EventArgs e)
         {
-            double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 };
+            double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 , 63.43035 , 10.39507 };
             //double[] _jsonDepth = new double[] { 3.6 , 1.6 , 3.6 };
-            double[] _jsonDepth = new double[] { 3.6 + increment * 1000, 1.6 + increment * (-1000), 3.6 + increment * (-100) };
+            double[] _jsonDepth = new double[] { 3.6 + increment * 1000, 1.6 + increment * (-1000), 2.6 + increment * (-100) , 0.0 + increment * 10000 };
             double[] _jsonRoute = new double[] { 63.43045 , 10.39517 , 63.44155, 10.39517, 63.43155, 10.39627 };
             string outputJson = JsonConvert.SerializeObject(_jsonRoute);
             string outputJsonDepth = JsonConvert.SerializeObject(_jsonDepth);
@@ -163,6 +162,7 @@ namespace swarmsWpfTest
 
             _longitude = _jsonMarker[0];
             _latitude = _jsonMarker[1];
+            _depth = _jsonDepth[0];
 
 
 
