@@ -48,8 +48,8 @@ namespace swarmsWpfTest
 
 
         public static double _direction = 250.6;
-        public static double _pitch = -35.0;
-        public static double _roll = -60.2;
+        public static double _pitch = 25.0;
+        public static double _roll = 10.2;
 
         public static bool _selfCheck = false;
         static bool _dynPos = false;
@@ -150,7 +150,7 @@ namespace swarmsWpfTest
 
         private double increment = 0;
 
-        private void dtTicker(object senderr, EventArgs e)
+        public void dtTicker(object senderr, EventArgs e)
         {
             double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 , 63.43035 , 10.39507 };
             //double[] _jsonDepth = new double[] { 3.6 , 1.6 , 3.6 };
@@ -163,8 +163,10 @@ namespace swarmsWpfTest
             _longitude = _jsonMarker[0];
             _latitude = _jsonMarker[1];
             _depth = _jsonDepth[0];
+            _pitch += increment;
+            _roll += increment * 10000;
 
-
+            //rovPage.updatePitchRoll();
 
 
             rightTopFrame.Content = new positionPage(_longitude, _latitude, _depth, _sog, _heading);
