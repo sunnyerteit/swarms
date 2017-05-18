@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace swarmsWpfTest
 {
@@ -27,6 +28,22 @@ namespace swarmsWpfTest
             _gripperFrame2.Content = new _gripperPage2(deg1, deg2, deg3);
             _gripperFrame3.Content = new _gripperPage3(deg1, deg2, deg3);
             updateArm();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += timer_Tick;
+            timer.Start();
+        }
+
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            ScaleTransform scaleTransform1 = new ScaleTransform(1, MainWindow._armDeg1 / 360.0, 0.5, 1.0);
+            _rDeg1.RenderTransform = scaleTransform1;
+            ScaleTransform scaleTransform2 = new ScaleTransform(1, MainWindow._armDeg2 / 360.0, 0.5, 1.0);
+            _rDeg2.RenderTransform = scaleTransform2;
+            ScaleTransform scaleTransform3 = new ScaleTransform(1, MainWindow._armDeg4 / 360.0, 0.5, 1.0);
+            _rDeg3.RenderTransform = scaleTransform3;
         }
 
         private void updateArm()
@@ -35,8 +52,8 @@ namespace swarmsWpfTest
             _rDeg1.RenderTransform = scaleTransform1;
             ScaleTransform scaleTransform2 = new ScaleTransform(1, MainWindow._armDeg2 / 360.0, 0.5, 1.0);
             _rDeg2.RenderTransform = scaleTransform2;
-            ScaleTransform scaleTransform3 = new ScaleTransform(1, MainWindow._armDeg3 / 360.0, 0.5, 1.0);
-            _rDeg3.RenderTransform = scaleTransform2;
+            ScaleTransform scaleTransform3 = new ScaleTransform(1, MainWindow._armDeg4 / 360.0, 0.5, 1.0);
+            _rDeg3.RenderTransform = scaleTransform3;
         }
     }
 }

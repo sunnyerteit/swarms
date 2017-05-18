@@ -9,6 +9,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow:hidden;
         }
 
         #map_canvas {
@@ -20,11 +21,18 @@
             background-color: green;
             color: white;
         }
-        img {
+        .indicator {
             position: absolute;
             top: 25%;
             left: 0;
             margin-left: 50px;
+            z-index: 2;
+        }
+        .grid {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            z-index: 1;
         }
     </style>
     <script type="text/javascript" src="http://maps.google.com.mx/maps/api/js?sensor=true&language=" en&AIzaSyCpavJgnp8Osbgo-5cmW4kLK0cCkt7RIq8""></script>
@@ -283,6 +291,7 @@
 </head>
 <body onload="initialize()">
     <div id="map_canvas"></div>
-    <img src="http://lorempixel.com/20/300/">
+    <img src="http://lorempixel.com/20/300/" class="indicator">
+    <img src="http://www.sueblimely.com/wp-content/uploads/2015/11/Facebook-Grid-Square-800x800.png" class="grid"/>
 </body>
 </html> 

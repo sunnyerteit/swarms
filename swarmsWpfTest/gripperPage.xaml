@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:swarmsWpfTest"
       mc:Ignorable="d"
       d:DesignHeight="686.5" d:DesignWidth="337.5"
-      Title="gripperPage" Height="Auto" Width="Auto">
+      Title="gripperPage" Height="Auto" Width="Auto" >
 
     <Grid>
         <Grid.RowDefinitions>

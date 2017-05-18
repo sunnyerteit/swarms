@@ -42,7 +42,7 @@ namespace swarmsWpfTest
         double _sog = 3.2;
         string _heading = "Home";
 
-        public static double _armDeg1 = 20.9;
+        public static double _armDeg1 = 320.9;
         public static double _armDeg2 = 24.9;
         public static double _armDeg3 = 54.9;
         public static double _armDeg4 = 0;
@@ -130,7 +130,7 @@ namespace swarmsWpfTest
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromSeconds(10);
+            dt.Interval = TimeSpan.FromSeconds(1);
             dt.Tick += dtTicker;
             dt.Start();
 
@@ -143,8 +143,8 @@ namespace swarmsWpfTest
         public void dttTicker(object sender, EventArgs e)
         {
             Random random = new Random();
-            _pitch += increment * 50000 * (random.NextDouble() - 0.5);
-            _roll += increment * 50000 * (random.NextDouble() - 0.5);
+            _pitch += 2 * (random.NextDouble() - 0.5);
+            _roll += 2 * (random.NextDouble() - 0.5);
             _direction += increment * 50000 * (random.NextDouble() - 0.5);
             _armDeg1 += 2 * (random.NextDouble() - 0.5);
             _armDeg2 += 2 * (random.NextDouble() - 0.5);
