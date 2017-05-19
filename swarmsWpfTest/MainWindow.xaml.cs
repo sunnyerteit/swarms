@@ -101,7 +101,6 @@ namespace swarmsWpfTest
         {
             rightBotFrame.Content = new rovPage(_dynPos, _drive, _follow);
 
-            //_bRovButton.Background = Brushes.#FF3C3B4D;
             _bRovButton.Background = new SolidColorBrush(Color.FromArgb(255, 60, 59, 77));
             _bGripperButton.Background = new SolidColorBrush(Color.FromArgb(255, 60, 56, 77));
         }
@@ -130,7 +129,8 @@ namespace swarmsWpfTest
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromSeconds(1);
+            //dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Interval = TimeSpan.FromMilliseconds(10);
             dt.Tick += dtTicker;
             dt.Start();
 
@@ -145,7 +145,7 @@ namespace swarmsWpfTest
             Random random = new Random();
             _pitch += 2 * (random.NextDouble() - 0.5);
             _roll += 2 * (random.NextDouble() - 0.5);
-            _direction += increment * 50000 * (random.NextDouble() - 0.5);
+            _direction += (random.NextDouble() - 0.5);
             _armDeg1 += 2 * (random.NextDouble() - 0.5);
             _armDeg2 += 2 * (random.NextDouble() - 0.5);
             _armDeg3 += 2 * (random.NextDouble() - 0.5);
@@ -184,7 +184,6 @@ namespace swarmsWpfTest
             _depth = _jsonDepth[0];
 
 
-            //rovPage.PitchRoll();
 
             rightTopFrame.Content = new positionPage(_longitude, _latitude, _depth, _sog, _heading);
             string _longitudeStr = _longitude.ToString("0.00000000000000000");
@@ -194,18 +193,37 @@ namespace swarmsWpfTest
             labelTopRight.Content = "Camera 2:  angle " + _angleCamera2 + "°  / position " + _longitude + " °N " + _latitude + " °E / lights - " + _lights + " / condition - " + _condition;
 
             increment += 0.00001;
-            //webBrowser1.InvokeScript("deleteMarkers", new Object[] { });
-            //ugly code
             if (_check == true)
             {
                 _check = false;
-                webBrowser1.InvokeScript("_markerList", new Object[] { outputJson2, outputJsonDepth });
+                try
+                {
+                    webBrowser1.InvokeScript("_markerList", new Object[] { outputJson2, outputJsonDepth });
+                }
+                catch (Exception)
+                {
+                    _check = true;
+                }
             }
             else
             {
-                webBrowser1.InvokeScript("_markerListUpdate", new Object[] { outputJson2, outputJsonDepth });
+                try
+                {
+                    webBrowser1.InvokeScript("_markerListUpdate", new Object[] { outputJson2, outputJsonDepth });
+                }
+                catch (Exception)
+                {
+                    // Nothing
+                }
             }
-            webBrowser1.InvokeScript("_jsonRoute", new Object[] { outputJson });
+            try
+            {
+                webBrowser1.InvokeScript("_jsonRoute", new Object[] { outputJson });
+            }
+            catch (Exception)
+            {
+                // Nothing
+            }
 
         }
             //public static void updatePos(_dynPos, )
