@@ -48,7 +48,7 @@ namespace swarmsWpfTest
         public static double _armDeg4 = 0;
 
 
-        public static double _direction = 250.6;
+        public static double _direction = -250.6;
         public static double _pitch = 0.0;
         public static double _roll = 0.0;
 
