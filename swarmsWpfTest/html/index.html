@@ -30,9 +30,19 @@
         }
         .grid {
             position: absolute;
-            top: 0%;
-            left: 0%;
+            bottom: 0%;
+            right: 0%;
             z-index: 1;
+        }
+        .meterOverlay {
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            z-index: 0;
+            color: white;
+            margin-bottom: 50px;
+            margin-right: 10px;
+            font-family: Arial;
         }
     </style>
     <script type="text/javascript" src="http://maps.google.com.mx/maps/api/js?sensor=true&language=" en&AIzaSyCpavJgnp8Osbgo-5cmW4kLK0cCkt7RIq8""></script>
@@ -40,10 +50,13 @@
     var map;
     var markers = [];
     function initialize() {
+        var lat = 63.43049; 
+        var lng = 10.395067; 
+        var zoom = 16;
         map = new google.maps.Map(document.getElementById('map_canvas'),
             {
-                zoom: 16,
-                center: new google.maps.LatLng(63.43049, 10.395067),
+                zoom: zoom,
+                center: new google.maps.LatLng(lat, lng),
                 mapTypeId: google.maps.MapTypeId.TERRAIN,
                 disableDefaultUI: true,
                 //zoomControl: true,
@@ -172,6 +185,9 @@
         //        //icon: 'down2.png',
         //        map: map,
         //    });
+        //Meters per pixel = 156543.03392 * Math.cos(latLng.lat() * Math.PI / 180) / Math.pow(2, zoom)
+
+        _meters.textContent = (156543.03392 * Math.cos(lat * Math.PI / 180) / Math.pow(2, zoom)).toFixed(2) + ' m';
     }
 
     function addMarker(Lat, Long, depth) {
@@ -293,5 +309,6 @@
     <div id="map_canvas"></div>
     <img src="http://lorempixel.com/20/300/" class="indicator">
     <img src="http://www.sueblimely.com/wp-content/uploads/2015/11/Facebook-Grid-Square-800x800.png" class="grid"/>
+    <div class="meterOverlay" id="_meters">670 m</div>
 </body>
 </html> 
