@@ -34,6 +34,12 @@
             right: 0%;
             z-index: 1;
         }
+        .svgGrid {
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            z-index: 1;
+        }
         .meterOverlay {
             position: absolute;
             bottom: 0%;
@@ -188,6 +194,10 @@
         //Meters per pixel = 156543.03392 * Math.cos(latLng.lat() * Math.PI / 180) / Math.pow(2, zoom)
 
         _meters.textContent = (156543.03392 * Math.cos(lat * Math.PI / 180) / Math.pow(2, zoom)).toFixed(2) + ' m';
+        var tempD = 80;
+        grid.setAttribute('height', tempD);
+        var _gridpath = 'M ' + tempD + ' 0 L 0 0 0 ' + tempD
+        gridPath.setAttribute('p', _gridpath)
     }
 
     function addMarker(Lat, Long, depth) {
@@ -308,7 +318,19 @@
 <body onload="initialize()">
     <div id="map_canvas"></div>
     <img src="http://lorempixel.com/20/300/" class="indicator">
-    <img src="http://www.sueblimely.com/wp-content/uploads/2015/11/Facebook-Grid-Square-800x800.png" class="grid"/>
     <div class="meterOverlay" id="_meters">670 m</div>
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="svgGrid" id="_svgGrid">
+        <defs>
+            <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+                <path id="smallGridPath" d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.25" />
+            </pattern>
+            <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                <rect width="80" height="80" fill="url(#smallGrid)" />
+                <path id="gridPath" d="M 160 0 L 0 0 0 160" fill="none" stroke="gray" stroke-width="0.5" />
+            </pattern>
+        </defs>
+
+        <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
 </body>
 </html> 
