@@ -167,6 +167,7 @@ namespace swarmsWpfTest
 
         private double increment = 0;
 
+        public bool _check = true;
         public void dtTicker(object sender, EventArgs e)
         {
             double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 , 63.43035 , 10.39507 };
@@ -193,8 +194,17 @@ namespace swarmsWpfTest
             labelTopRight.Content = "Camera 2:  angle " + _angleCamera2 + "°  / position " + _longitude + " °N " + _latitude + " °E / lights - " + _lights + " / condition - " + _condition;
 
             increment += 0.00001;
-            webBrowser1.InvokeScript("deleteMarkers", new Object[] { });
-            webBrowser1.InvokeScript("_markerList", new Object[] { outputJson2, outputJsonDepth });
+            //webBrowser1.InvokeScript("deleteMarkers", new Object[] { });
+            //ugly code
+            if (_check == true)
+            {
+                _check = false;
+                webBrowser1.InvokeScript("_markerList", new Object[] { outputJson2, outputJsonDepth });
+            }
+            else
+            {
+                webBrowser1.InvokeScript("_markerListUpdate", new Object[] { outputJson2, outputJsonDepth });
+            }
             webBrowser1.InvokeScript("_jsonRoute", new Object[] { outputJson });
 
         }

@@ -205,6 +205,8 @@
         smallGridPath.setAttribute('d', _smallGridPath)
     }
 
+    // Establish first round of markers
+    //
     function addMarker(Lat, Long, depth) {
         var latLng = new google.maps.LatLng(Lat, Long);
 
@@ -252,6 +254,8 @@
                     color: "#FFFFFF",
                 },
             });
+
+        // Array with all markers
         markers.push(marker);
         marker.setMap(map);
     }
@@ -273,6 +277,7 @@
     }
 
     // Establish route from JSONarray
+    //
     var check = 0;
     function _jsonRoute(array) {
         var obj = JSON.parse(array);
@@ -305,11 +310,72 @@
     }
 
     // Establish markers from JSONarray
+    //
     function _markerList(array, arrayDepth) {
         var objMarker = JSON.parse(array);
         var objDepth = JSON.parse(arrayDepth);
         for (i = 0; i < objMarker.length / 2; i++) {
             addMarker(objMarker[2 * i], objMarker[2 * i + 1], objDepth[i]);
+        }
+
+
+        // Follow the main ROV
+        var center = new google.maps.LatLng(objMarker[0], objMarker[1]);
+        map.panTo(center);
+    }
+
+    // Updates marker positions and icons 
+    //
+    function _markerListUpdate(array, arrayDepth) {
+        var objMarker = JSON.parse(array);
+        var objDepth = JSON.parse(arrayDepth);
+
+        // Loop over position and depth arrays
+        for (i = 0; i < objMarker.length / 2; i++) {
+            markers[i].setPosition(new google.maps.LatLng(objMarker[2 * i], objMarker[2 * i + 1]));
+
+            // Establish label formatting
+            markerLabel = {
+                text: objDepth[i].toFixed(2) + ' m',
+                color: "#FFFFFF",
+            }
+            markers[i].setLabel(markerLabel);
+
+            // Establish marker icon
+            if (objDepth[i] < 0.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else if (objDepth[i] < 1.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else if (objDepth[i] < 2.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else if (objDepth[i] < 3.5) {
+                var markerImage = 'http://maplacejs.com/website/images/red-dot.png';
+            } else if (objDepth[i] < 4.5) {
+                var markerImage = 'http://www.clker.com/cliparts/e/3/F/I/0/A/google-maps-marker-for-residencelamontagne-hi.png';
+            } else if (objDepth[i] < 5.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else if (objDepth[i] < 6.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else if (objDepth[i] < 7.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else if (objDepth[i] < 8.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else if (objDepth[i] < 9.5) {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            } else {
+                var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
+            }
+
+            // Icon formatting
+            var markerIcon = {
+                url: markerImage,
+                scaledSize: new google.maps.Size(40, 40),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(20, 20),
+                labelOrigin: new google.maps.Point(40, 50)
+            };
+
+            markers[i].setIcon(markerIcon);
         }
 
 
