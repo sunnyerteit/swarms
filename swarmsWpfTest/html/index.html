@@ -273,6 +273,7 @@
     }
 
     // Establish route from JSONarray
+    var check = 0;
     function _jsonRoute(array) {
         var obj = JSON.parse(array);
         route = [];
@@ -296,8 +297,11 @@
                 repeat: '20px',
             }]
         })
-
-        rovPath.setMap(map);
+        if (check == 0) {
+            check = 1;
+            rovPath.setMap(map);
+        }
+        //rovPath.setMap(map);
     }
 
     // Establish markers from JSONarray

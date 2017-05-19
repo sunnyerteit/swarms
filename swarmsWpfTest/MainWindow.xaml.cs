@@ -192,10 +192,10 @@ namespace swarmsWpfTest
             labelTopLeft.Content = "Camera 1:  angle " + _angleCamera1 + "°  / position " + _longitude + " °N " + _latitude + " °E / lights - " + _lights + " / condition - " + _condition;
             labelTopRight.Content = "Camera 2:  angle " + _angleCamera2 + "°  / position " + _longitude + " °N " + _latitude + " °E / lights - " + _lights + " / condition - " + _condition;
 
-            webBrowser1.InvokeScript("_jsonRoute", new Object[] { outputJson });
             increment += 0.00001;
             webBrowser1.InvokeScript("deleteMarkers", new Object[] { });
             webBrowser1.InvokeScript("_markerList", new Object[] { outputJson2, outputJsonDepth });
+            webBrowser1.InvokeScript("_jsonRoute", new Object[] { outputJson });
 
         }
             //public static void updatePos(_dynPos, )
