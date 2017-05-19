@@ -35,24 +35,29 @@ namespace swarmsWpfTest
             timer.Start();
         }
 
+        static double mod(double x, int m)
+        {
+            double r = x % m;
+            return r < 0 ? r + m : r;
+        }
 
         void timer_Tick(object sender, EventArgs e)
         {
-            ScaleTransform scaleTransform1 = new ScaleTransform(1, MainWindow._armDeg1 / 360.0, 0.5, 1.0);
+            ScaleTransform scaleTransform1 = new ScaleTransform(1, mod(MainWindow._armDeg1, 360) / 360.0, 0.5, 1.0);
             _rDeg1.RenderTransform = scaleTransform1;
-            ScaleTransform scaleTransform2 = new ScaleTransform(1, MainWindow._armDeg2 / 360.0, 0.5, 1.0);
+            ScaleTransform scaleTransform2 = new ScaleTransform(1, mod(MainWindow._armDeg2, 360) / 360.0, 0.5, 1.0);
             _rDeg2.RenderTransform = scaleTransform2;
-            ScaleTransform scaleTransform3 = new ScaleTransform(1, MainWindow._armDeg4 / 360.0, 0.5, 1.0);
+            ScaleTransform scaleTransform3 = new ScaleTransform(1, mod(MainWindow._armDeg4, 360) / 360.0, 0.5, 1.0);
             _rDeg3.RenderTransform = scaleTransform3;
         }
 
         private void updateArm()
         {
-            ScaleTransform scaleTransform1 = new ScaleTransform(1, MainWindow._armDeg1 / 360.0, 0.5, 1.0);
+            ScaleTransform scaleTransform1 = new ScaleTransform(1, mod(MainWindow._armDeg1, 360) / 360.0, 0.5, 1.0);
             _rDeg1.RenderTransform = scaleTransform1;
-            ScaleTransform scaleTransform2 = new ScaleTransform(1, MainWindow._armDeg2 / 360.0, 0.5, 1.0);
+            ScaleTransform scaleTransform2 = new ScaleTransform(1, mod(MainWindow._armDeg2, 360) / 360.0, 0.5, 1.0);
             _rDeg2.RenderTransform = scaleTransform2;
-            ScaleTransform scaleTransform3 = new ScaleTransform(1, MainWindow._armDeg4 / 360.0, 0.5, 1.0);
+            ScaleTransform scaleTransform3 = new ScaleTransform(1, mod(MainWindow._armDeg4, 360) / 360.0, 0.5, 1.0);
             _rDeg3.RenderTransform = scaleTransform3;
         }
     }

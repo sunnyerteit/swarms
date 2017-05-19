@@ -106,35 +106,35 @@ namespace swarmsWpfTest
             _lCompassDegrees.Content = (mod(MainWindow._direction, 360)).ToString("0.");
             RotateTransform rotateTransform = new RotateTransform( - MainWindow._direction + 45);
             _iDynamicCompass.RenderTransform = rotateTransform;
-            if (MainWindow._direction % 360 < 22.5)
+            if (mod(MainWindow._direction, 360) < 22.5)
             {
                 _lADirection.Content = "NORTH";
             }
-            else if (MainWindow._direction % 360 < 67.5)
+            else if (mod(MainWindow._direction, 360) < 67.5)
             {
                 _lADirection.Content = "NORTHEAST";
             }
-            else if (MainWindow._direction % 360 < 112.5)
+            else if (mod(MainWindow._direction, 360) < 112.5)
             {
                 _lADirection.Content = "EAST";
             }
-            else if (MainWindow._direction % 360 < 157.5)
+            else if (mod(MainWindow._direction, 360) < 157.5)
             {
                 _lADirection.Content = "SOUTHEAST";
             }
-            else if (MainWindow._direction % 360 < 202.5)
+            else if (mod(MainWindow._direction, 360) < 202.5)
             {
                 _lADirection.Content = "SOUTH";
             }
-            else if (MainWindow._direction % 360 < 247.5)
+            else if (mod(MainWindow._direction, 360) < 247.5)
             {
                 _lADirection.Content = "SOUTHWEST";
             }
-            else if (MainWindow._direction % 360 < 292.5)
+            else if (mod(MainWindow._direction, 360) < 292.5)
             {
                 _lADirection.Content = "WEST";
             }
-            else if (MainWindow._direction % 360 < 337.5)
+            else if (mod(MainWindow._direction, 360) < 337.5)
             {
                 _lADirection.Content = "NORTHWEST";
             }
@@ -158,56 +158,56 @@ namespace swarmsWpfTest
             RotateTransform rotateTransform1 = new RotateTransform(MainWindow._roll);
             _iPitchRoll.RenderTransform = rotateTransform1;
 
-            if (MainWindow._pitch % 360 < 2.5)
+            if (mod(MainWindow._pitch, 360) < 2.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr0.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 7.5)
+            else if (mod(MainWindow._pitch, 360) < 7.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr0.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 12.5)
+            else if (mod(MainWindow._pitch, 360) < 12.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr10.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 17.5)
+            else if (mod(MainWindow._pitch, 360) < 17.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr10.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 22.5)
+            else if (mod(MainWindow._pitch, 360) < 22.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 27.5)
+            else if (mod(MainWindow._pitch, 360) < 27.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 180.0)
+            else if (mod(MainWindow._pitch, 360) < 180.0)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr30.png", UriKind.Relative));
             }
             //////////////////////
-            else if (MainWindow._pitch % 360 < 332.5)
+            else if (mod(MainWindow._pitch, 360) < 332.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn30.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 337.5)
+            else if (mod(MainWindow._pitch, 360) < 337.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn30.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 342.5)
+            else if (mod(MainWindow._pitch, 360) < 342.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 347.5)
+            else if (mod(MainWindow._pitch, 360) < 347.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 352.5)
+            else if (mod(MainWindow._pitch, 360) < 352.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn10.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 357.5)
+            else if (mod(MainWindow._pitch, 360) < 357.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn10.png", UriKind.Relative));
             }
@@ -220,35 +220,35 @@ namespace swarmsWpfTest
             _lCompassDegrees.Content = (mod(MainWindow._direction, 360)).ToString("0.");
             RotateTransform rotateTransform2 = new RotateTransform(-MainWindow._direction + 45);
             _iDynamicCompass.RenderTransform = rotateTransform2;
-            if (MainWindow._direction % 360 < 22.5)
+            if (mod(MainWindow._direction, 360) < 22.5)
             {
                 _lADirection.Content = "NORTH";
             }
-            else if (MainWindow._direction % 360 < 67.5)
+            else if (mod(MainWindow._direction, 360) < 67.5)
             {
                 _lADirection.Content = "NORTHEAST";
             }
-            else if (MainWindow._direction % 360 < 112.5)
+            else if (mod(MainWindow._direction, 360) < 112.5)
             {
                 _lADirection.Content = "EAST";
             }
-            else if (MainWindow._direction % 360 < 157.5)
+            else if (mod(MainWindow._direction, 360) < 157.5)
             {
                 _lADirection.Content = "SOUTHEAST";
             }
-            else if (MainWindow._direction % 360 < 202.5)
+            else if (mod(MainWindow._direction, 360) < 202.5)
             {
                 _lADirection.Content = "SOUTH";
             }
-            else if (MainWindow._direction % 360 < 247.5)
+            else if (mod(MainWindow._direction, 360) < 247.5)
             {
                 _lADirection.Content = "SOUTHWEST";
             }
-            else if (MainWindow._direction % 360 < 292.5)
+            else if (mod(MainWindow._direction, 360) < 292.5)
             {
                 _lADirection.Content = "WEST";
             }
-            else if (MainWindow._direction % 360 < 337.5)
+            else if (mod(MainWindow._direction, 360) < 337.5)
             {
                 _lADirection.Content = "NORTHWEST";
             }
@@ -263,56 +263,56 @@ namespace swarmsWpfTest
             RotateTransform rotateTransform = new RotateTransform(MainWindow._roll);
             _iPitchRoll.RenderTransform = rotateTransform;
 
-            if (MainWindow._pitch % 360 < 2.5)
+            if (mod(MainWindow._pitch, 360) < 2.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr0.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 7.5)
+            else if (mod(MainWindow._pitch, 360) < 7.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr0.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 12.5)
+            else if (mod(MainWindow._pitch, 360) < 12.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr10.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 17.5)
+            else if (mod(MainWindow._pitch, 360) < 17.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr10.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 22.5)
+            else if (mod(MainWindow._pitch, 360) < 22.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 27.5)
+            else if (mod(MainWindow._pitch, 360) < 27.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 180.0)
+            else if (mod(MainWindow._pitch, 360) < 180.0)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnr30.png", UriKind.Relative));
             }
             //////////////////////
-            else if (MainWindow._pitch % 360 < 332.5)
+            else if (mod(MainWindow._pitch, 360) < 332.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn30.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 337.5)
+            else if (mod(MainWindow._pitch, 360) < 337.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn30.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 342.5)
+            else if (mod(MainWindow._pitch, 360) < 342.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 347.5)
+            else if (mod(MainWindow._pitch, 360) < 347.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn20.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 352.5)
+            else if (mod(MainWindow._pitch, 360) < 352.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn10.png", UriKind.Relative));
             }
-            else if (MainWindow._pitch % 360 < 357.5)
+            else if (mod(MainWindow._pitch, 360) < 357.5)
             {
                 _iPitchRoll.Source = new BitmapImage(new Uri(@"image/_pnrn10.png", UriKind.Relative));
             }
@@ -327,15 +327,11 @@ namespace swarmsWpfTest
 
         private void _cStatusChecked(object sender, RoutedEventArgs e)
         {
-            Trace.WriteLine("ctext");
-
             MainWindow._selfCheck = true;
         }
 
         private void _cStatusUnchecked(object sender, RoutedEventArgs e)
         {
-            Trace.WriteLine("utext");
-
             MainWindow._selfCheck = false;
         }
 
