@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
     <style type="text/css">
         html, body {
             height: 100%;
@@ -28,12 +29,6 @@
             margin-left: 50px;
             z-index: 2;
         }
-        .grid {
-            position: absolute;
-            bottom: 0%;
-            right: 0%;
-            z-index: 1;
-        }
         .svgGrid {
             position: absolute;
             bottom: 0%;
@@ -46,18 +41,26 @@
             right: 0%;
             z-index: 0;
             color: white;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
             margin-right: 10px;
             font-family: Arial;
         }
     </style>
     <script type="text/javascript" src="http://maps.google.com.mx/maps/api/js?sensor=true&language=" en&AIzaSyCpavJgnp8Osbgo-5cmW4kLK0cCkt7RIq8""></script>
     <script type="text/javascript">
+
+    // Contains map
     var map;
+
+    // Contains markers, so that they can be deletes in real time
     var markers = [];
     function initialize() {
+
+        // Initial coordinates. Should change this
         var lat = 63.43049; 
         var lng = 10.395067; 
+
+        // Zoom of map
         var zoom = 16;
         map = new google.maps.Map(document.getElementById('map_canvas'),
             {
@@ -65,8 +68,9 @@
                 center: new google.maps.LatLng(lat, lng),
                 mapTypeId: google.maps.MapTypeId.TERRAIN,
                 disableDefaultUI: true,
-                //zoomControl: true,
                 maxZoom: 16,
+
+                // Styles can be established here: https://mapstyle.withgoogle.com/
                 styles: [
                     {
                         "elementType": "geometry",
@@ -184,30 +188,27 @@
                     }
                 ]
             });
-        //var hei = { lat: 63.43049, lng: 10.395067 };
-        //var marker = new google.maps.Marker
-        //    ({
-        //        position: hei,
-        //        //icon: 'down2.png',
-        //        map: map,
-        //    });
-        //Meters per pixel = 156543.03392 * Math.cos(latLng.lat() * Math.PI / 180) / Math.pow(2, zoom)
 
-        _meters.textContent = (156543.03392 * Math.cos(lat * Math.PI / 180) / Math.pow(2, zoom)).toFixed(2) + ' m';
-        var tempD = 80;
-        grid.setAttribute('height', tempD);
-        var _gridpath = 'M ' + tempD + ' 0 L 0 0 0 ' + tempD
-        gridPath.setAttribute('p', _gridpath)
+        // Establish grid overlay for map
+        var gridPixel = 200 / (156543.03392 * Math.cos(lat * Math.PI / 180) / Math.pow(2, zoom));
+        grid.setAttribute('height', gridPixel);
+        grid.setAttribute('width', gridPixel);
+        var _gridPath = 'M ' + gridPixel + ' 0 L 0 0 0 ' + gridPixel;
+        gridPath.setAttribute('d', _gridPath)
+        gridRect.setAttribute('width', gridPixel);
+        gridRect.setAttribute('height', gridPixel);
+
+        // Small grid, can be removed
+        smallGrid.setAttribute('height', gridPixel / 10);
+        smallGrid.setAttribute('width', gridPixel / 10);
+        var _smallGridPath = 'M ' + gridPixel / 10 + ' 0 L 0 0 0 ' + gridPixel / 10;
+        smallGridPath.setAttribute('d', _smallGridPath)
     }
 
     function addMarker(Lat, Long, depth) {
         var latLng = new google.maps.LatLng(Lat, Long);
-        //var contentString = '<div id="content">' +
-        //    '<h1>' + Client + '</h1>' +
-        //    '<img src="' + Image + '" widht="180" height="180" style="margin: 0 auto; display:block"/>' +
-        //    '<br/><br/>' + Direction +
-        //    '</div>';
-        //var infowindow = new google.maps.InfoWindow({ content: contentString });
+
+        // Change marker image given a certain depth
         if (depth < 0.5) {
             var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
         } else if (depth < 1.5) {
@@ -232,8 +233,8 @@
             var markerImage = 'http://image.flaticon.com/icons/svg/252/252025.svg';
         }
 
+        // Marker image formatting
         var markerIcon = {
-            //url: 'http://image.flaticon.com/icons/svg/252/252025.svg',
             url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
             origin: new google.maps.Point(0, 0),
@@ -241,6 +242,7 @@
             labelOrigin: new google.maps.Point(40, 50)
         };
 
+        // Establish marker and label
         marker = new google.maps.Marker
             ({
             position: latLng,
@@ -254,7 +256,7 @@
         marker.setMap(map);
     }
 
-
+    // Functions that help establish and remove markers in realm time 
     function setMapOnAll(map) {
         for (var i = 0; i < markers.length; i++) {
             markers[i].setMap(map);
@@ -316,21 +318,26 @@
 
 </head>
 <body onload="initialize()">
+    <!--Contains map-->
     <div id="map_canvas"></div>
+
+    <!--Contains depth color indicator-->
     <img src="http://lorempixel.com/20/300/" class="indicator">
-    <div class="meterOverlay" id="_meters">670 m</div>
+
+    <!--Grid overlay. Changes size depending on latitude in the functiojn initialize()-->
+    <div class="meterOverlay" id="_meters">Grid: 200 m</div>
     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="svgGrid" id="_svgGrid">
         <defs>
             <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
-                <path id="smallGridPath" d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.25" />
+                <path id="smallGridPath" d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-opacity="0.4" stroke-width="0.25" />
             </pattern>
             <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-                <rect width="80" height="80" fill="url(#smallGrid)" />
-                <path id="gridPath" d="M 160 0 L 0 0 0 160" fill="none" stroke="gray" stroke-width="0.5" />
+                <rect id="gridRect" width="80" height="80" fill="url(#smallGrid)" />
+                <path id="gridPath" d="M 160 0 L 0 0 0 160" fill="none" stroke="gray" stroke-opacity="1" stroke-width="0.5" />
             </pattern>
         </defs>
-
         <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>
+
 </body>
 </html> 
