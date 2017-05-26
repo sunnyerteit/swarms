@@ -187,7 +187,8 @@ namespace swarmsWpfTest
             vehicles = Select();
             //double[] _jsonMarker = new double[] { 63.43045 + increment *0.1, 10.39517 + increment*0.1, 63.43045, 10.39517 , 63.43155, 10.39627 };
             double[] _jsonMarker = new double[] { Convert.ToDouble(vehicles[2][0]), Convert.ToDouble(vehicles[3][0]), Convert.ToDouble(vehicles[2][1]), Convert.ToDouble(vehicles[3][1]), Convert.ToDouble(vehicles[2][2]), Convert.ToDouble(vehicles[3][2])};
-            double[] _jsonDepth = new double[] { 3.6 + increment * 1000, 1.6 + increment * (-1000), 2.6 + increment * (-100) , 0.0 + increment * 10000 };
+            //double[] _jsonDepth = new double[] { 3.6 + increment * 1000, 1.6 + increment * (-1000), 2.6 + increment * (-100) , 0.0 + increment * 10000 };
+            double[] _jsonDepth = new double[] { Convert.ToDouble(vehicles[1][0]), Convert.ToDouble(vehicles[1][1]), Convert.ToDouble(vehicles[1][2])};
             double[] _jsonRoute = new double[] { 63.43045 , 10.39517 , 63.44155, 10.39517, 63.43155, 10.39627 };
             string outputJson = JsonConvert.SerializeObject(_jsonRoute);
             string outputJsonDepth = JsonConvert.SerializeObject(_jsonDepth);
