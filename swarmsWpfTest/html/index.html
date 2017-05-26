@@ -241,7 +241,8 @@
             scaledSize: new google.maps.Size(40, 40),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(20, 20),
-            labelOrigin: new google.maps.Point(40, 50)
+            labelOrigin: new google.maps.Point(40, 50),
+            rotation: 180,
         };
 
         // Establish marker and label
@@ -321,7 +322,12 @@
 
         // Follow the main ROV
         var center = new google.maps.LatLng(objMarker[0], objMarker[1]);
-        map.panTo(center);
+        try {
+            map.panTo(center);
+        }
+        catch (err) {
+
+        }
     }
 
     // Updates marker positions and icons 
@@ -368,11 +374,15 @@
 
             // Icon formatting
             var markerIcon = {
-                url: markerImage,
+                //url: markerImage,
+                path: "M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z",
+                fillColor: '#FF0000',
+                fillOpacity: 0.6,
                 scaledSize: new google.maps.Size(40, 40),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(20, 20),
-                labelOrigin: new google.maps.Point(40, 50)
+                origin: new google.maps.Point(20, 20),
+                anchor: new google.maps.Point(15, 15),
+                labelOrigin: new google.maps.Point(0, 0),
+                rotation: 90,
             };
 
             markers[i].setIcon(markerIcon);
@@ -381,7 +391,12 @@
 
         // Follow the main ROV
         var center = new google.maps.LatLng(objMarker[0], objMarker[1]);
-        map.panTo(center);
+        try {
+            map.panTo(center);
+        }
+        catch (err) {
+
+        }
     }
 
     </script>
@@ -392,7 +407,7 @@
     <div id="map_canvas"></div>
 
     <!--Contains depth color indicator-->
-    <img src="http://lorempixel.com/20/300/" class="indicator">
+    <!--<img src="http://lorempixel.com/20/300/" class="indicator">-->
 
     <!--Grid overlay. Changes size depending on latitude in the functiojn initialize()-->
     <div class="meterOverlay" id="_meters">Grid: 200 m</div>

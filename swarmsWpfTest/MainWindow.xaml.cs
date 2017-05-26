@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.Windows.Threading;
 using System.IO;
 using Newtonsoft.Json;
+using MySql.Data.MySqlClient;
 
 namespace swarmsWpfTest
 {
@@ -58,9 +59,22 @@ namespace swarmsWpfTest
         static bool _follow = false;
 
 
+
+        // Establish MySql procedures
+        private MySqlConnection connection;
+        private string server;
+        private string database;
+        private string uid;
+        private string password;
+
+        private int vehicleID;
+        List<string>[] vehicles = new List<string>[11];
+
+
         public MainWindow()
         {
             InitializeComponent();
+            MySqlInit();
             displayTime();
             rightTopFrame.Content = new positionPage(_longitude, _latitude, _depth, _sog, _heading);
             rightBotFrame.Content = new gripperPage(_armDeg1,_armDeg2,_armDeg3);
@@ -130,12 +144,12 @@ namespace swarmsWpfTest
         {
             DispatcherTimer dt = new DispatcherTimer();
             //dt.Interval = TimeSpan.FromSeconds(1);
-            dt.Interval = TimeSpan.FromMilliseconds(10);
+            dt.Interval = TimeSpan.FromMilliseconds(1000);
             dt.Tick += dtTicker;
             dt.Start();
 
             DispatcherTimer dtt = new DispatcherTimer();
-            dtt.Interval = TimeSpan.FromMilliseconds(100);
+            dtt.Interval = TimeSpan.FromMilliseconds(1000);
             dtt.Tick += dttTicker;
             dtt.Start();
         }
@@ -170,7 +184,9 @@ namespace swarmsWpfTest
         public bool _check = true;
         public void dtTicker(object sender, EventArgs e)
         {
-            double[] _jsonMarker = new double[] { 63.43045 + increment, 10.39517 + increment, 63.44155, 10.39517, 63.43155, 10.39627 , 63.43035 , 10.39507 };
+            vehicles = Select();
+            //double[] _jsonMarker = new double[] { 63.43045 + increment *0.1, 10.39517 + increment*0.1, 63.43045, 10.39517 , 63.43155, 10.39627 };
+            double[] _jsonMarker = new double[] { Convert.ToDouble(vehicles[2][0]), Convert.ToDouble(vehicles[3][0]), Convert.ToDouble(vehicles[2][1]), Convert.ToDouble(vehicles[3][1]), Convert.ToDouble(vehicles[2][2]), Convert.ToDouble(vehicles[3][2])};
             double[] _jsonDepth = new double[] { 3.6 + increment * 1000, 1.6 + increment * (-1000), 2.6 + increment * (-100) , 0.0 + increment * 10000 };
             double[] _jsonRoute = new double[] { 63.43045 , 10.39517 , 63.44155, 10.39517, 63.43155, 10.39627 };
             string outputJson = JsonConvert.SerializeObject(_jsonRoute);
@@ -238,5 +254,123 @@ namespace swarmsWpfTest
             //}
 
 
+        ////////////////////////////////////////////////////////////
+        private void MySqlInit()
+        {
+            server = "localhost";
+            database = "swarms_data";
+            uid = "root";
+            password = "root";
+
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            connection = new MySqlConnection(connectionString);
         }
+
+        private bool OpenConnection()
+        {
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //When handling errors, you can your application's response based 
+                //on the error number.
+                //The two most common error numbers when connecting are as follows:
+                //0: Cannot connect to server.
+                //1045: Invalid user name and/or password.
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        break;
+
+                    case 1045:
+                        MessageBox.Show("Invalid username/password, please try again");
+                        break;
+                }
+                return false;
+            }
+
+        }
+
+        private bool CloseConnection()
+        {
+            try
+            {
+                connection.Close();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        // Create list with all vehicles
+        public List<string>[] Select()
+        {
+            string query = "SELECT * FROM vehicle_status";
+
+            // Create a list to store the result
+            List<string>[] list = new List<string>[11];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+            list[2] = new List<string>();
+            list[3] = new List<string>();
+            list[4] = new List<string>();
+            list[5] = new List<string>();
+            list[6] = new List<string>();
+            list[7] = new List<string>();
+            list[8] = new List<string>();
+            list[9] = new List<string>();
+            list[10] = new List<string>();
+
+            // Open connection
+            if (this.OpenConnection() == true)
+            {
+                // Crate command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                // Create a data reader and execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                // Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["timestamp"] + "");
+                    list[1].Add(dataReader["depth"] + "");
+                    list[2].Add(dataReader["altitude"] + "");
+                    list[3].Add(dataReader["longitude"] + "");
+                    list[4].Add(dataReader["speed"] + "");
+                    list[5].Add(dataReader["yaw"] + "");
+                    list[6].Add(dataReader["roll"] + "");
+                    list[7].Add(dataReader["pitch"] + "");
+                    list[8].Add(dataReader["battery"] + "");
+                    list[9].Add(dataReader["vehicleID"] + "");
+                    list[10].Add(dataReader["actionID"] + "");
+                }
+
+                // Close data reader
+                dataReader.Close();
+
+                // Close connection
+                this.CloseConnection();
+
+                // Return list to be displayed
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
+        //////////////////////////////////////////////////////////////////////////
+
     }
+}
